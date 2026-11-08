@@ -25,7 +25,7 @@ function xanh_logo() {
 	printf(
 		'<a class="logo" href="%1$s" rel="home">%2$s<span class="logo__text">%3$s</span></a>',
 		esc_url( home_url( '/' ) ),
-		xanh_leaf_logo( 32 ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG tĩnh.
+		xanh_leaf_logo( 44 ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG tĩnh.
 		esc_html( get_bloginfo( 'name' ) )
 	);
 }

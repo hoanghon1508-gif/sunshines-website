@@ -99,7 +99,7 @@ $shop   = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 's
 	</div>
 </section>
 
-<?php if ( function_exists( 'xanh_product_categories' ) && xanh_product_categories() ) : ?>
+<?php if ( function_exists( 'xanh_product_categories' ) && count( xanh_product_categories() ) >= 2 ) : // Chỉ hiện khi có từ 2 danh mục trở lên. ?>
 	<section class="section">
 		<div class="container">
 			<div class="section__head">

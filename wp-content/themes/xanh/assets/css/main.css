@@ -130,7 +130,7 @@ button { font: inherit; }
 .navbar__actions { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
 .logo, .custom-logo-link { display: inline-flex; align-items: center; gap: 8px; }
-.logo__text { font-size: 26px; font-weight: 800; color: var(--c-primary-700); letter-spacing: -.02em; }
+.logo__text { font-size: 24px; font-weight: 800; color: var(--c-primary-700); text-transform: uppercase; white-space: nowrap; }
 .custom-logo { max-height: 48px; width: auto; }
 
 .site-nav { flex: 1 1 auto; display: flex; justify-content: center; }
@@ -173,7 +173,8 @@ button { font: inherit; }
 	.navbar__inner { min-height: 60px; gap: 8px; }
 	.navbar__toggle { display: inline-flex; }
 	.navbar__brand { flex: 1; display: flex; justify-content: center; }
-	.logo__text { font-size: 22px; }
+	.logo__text { font-size: 19px; }
+	.logo svg { width: 34px; height: 34px; }
 	.navbar__actions { margin-left: 0; }
 	.navbar__actions [data-search-toggle] { display: none; }
 

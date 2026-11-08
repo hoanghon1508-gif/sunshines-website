@@ -119,31 +119,25 @@ for id in "$P1" "$P2" "$P3" "$P4"; do command wp menu item add-post "Chính sác
 
 if [[ "$DEMO" == "1" ]]; then
 	echo "==> Dữ liệu mẫu"
-	CATS=()
-	CAT_NAMES=("Thảo Mộc Mogan" "Danh mục 2" "Danh mục 3" "Danh mục 4")
-	CAT_SLUGS=("thao-moc-mogan" "danh-muc-2" "danh-muc-3" "danh-muc-4")
-	for n in 0 1 2 3; do
-		slug="${CAT_SLUGS[$n]}"
-		cid=$(command wp wc product_cat list --user="$ADMIN_USER" --slug="$slug" --field=id 2>/dev/null | head -n1)
-		if [[ -z "$cid" ]]; then
-			cid=$(command wp wc product_cat create --user="$ADMIN_USER" --name="${CAT_NAMES[$n]}" --slug="$slug" --porcelain)
-		fi
-		CATS+=("$cid")
-	done
+	# Tạm thời chỉ có dòng sản phẩm Thảo Mộc Mogan.
+	MOGAN=$(command wp wc product_cat list --user="$ADMIN_USER" --slug="thao-moc-mogan" --field=id 2>/dev/null | head -n1)
+	if [[ -z "$MOGAN" ]]; then
+		MOGAN=$(command wp wc product_cat create --user="$ADMIN_USER" --name="Thảo Mộc Mogan" --slug="thao-moc-mogan" --porcelain)
+	fi
 	PRICES=(320000 200000 560000 120000 350000 190000 650000 300000)
 	SALES=(250000 180000 420000 95000 310000 150000 520000 275000)
 	for i in $(seq 0 7); do
-		name="Sản phẩm mẫu số $((i + 1))"
+		name="Thảo Mộc Mogan – Sản phẩm $((i + 1))"
 		if [[ -z "$(command wp post list --post_type=product --title="$name" --field=ID 2>/dev/null)" ]]; then
 			command wp wc product create --user="$ADMIN_USER" --name="$name" --type=simple \
 				--regular_price="${PRICES[$i]}" --sale_price="${SALES[$i]}" \
 				--featured=true --status=publish \
 				--short_description="Giới thiệu tóm tắt về sản phẩm: công dụng chính, chất liệu/thành phần, quy cách đóng gói." \
 				--description="Nội dung mô tả chi tiết sản phẩm được soạn trong trang quản trị." \
-				--categories="[{\"id\":${CATS[$((i % 4))]}}]" >/dev/null
+				--categories="[{\"id\":${MOGAN}}]" >/dev/null
 		fi
 	done
-	for t in "Bí quyết chọn sản phẩm phù hợp cho gia đình bạn" "Xu hướng sống xanh năm 2026 bạn nên biết" "Hướng dẫn bảo quản sản phẩm đúng cách"; do
+	for t in "Bí quyết chọn sản phẩm phù hợp cho gia đình bạn" "Lợi ích của thảo mộc trong chăm sóc sức khỏe hằng ngày" "Hướng dẫn bảo quản sản phẩm đúng cách"; do
 		if [[ -z "$(command wp post list --post_type=post --title="$t" --field=ID 2>/dev/null)" ]]; then
 			command wp post create --post_type=post --post_status=publish --post_title="$t" \
 				--post_excerpt="Đoạn tóm tắt ngắn của bài viết giúp người đọc nắm nhanh nội dung chính." \

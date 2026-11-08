@@ -12,7 +12,7 @@ Website bán hàng tông xanh lá cho thương hiệu Sun Shines và dòng sản
   - `bin/setup-site.sh`: script tự cấu hình website (tiếng Việt, VNĐ, các trang, menu, dữ liệu mẫu)
   - `docker-compose.yml`: môi trường chạy thử trên máy
 
-> Tên công ty, slogan và 2 fanpage đã điền sẵn. Hotline, địa chỉ, email, sản phẩm và hình ảnh hiện là **dữ liệu mẫu**, chỉnh trong trang quản trị (*Cài đặt website*, *Sản phẩm*). Thư mục code vẫn mang tên kỹ thuật `xanh`/`xanh-core`; tên hiển thị là "Sun Shines".
+> Tên công ty, slogan và 2 fanpage đã điền sẵn. Hotline, địa chỉ và Zalo đã điền sẵn. Email, sản phẩm và hình ảnh hiện là **dữ liệu mẫu**, chỉnh trong trang quản trị (*Cài đặt website*, *Sản phẩm*). Thư mục code vẫn mang tên kỹ thuật `xanh`/`xanh-core`; tên hiển thị là "Sun Shines".
 
 ---
 
