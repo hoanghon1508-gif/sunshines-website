@@ -33,6 +33,13 @@ function xanh_social_links() {
 		if ( $url ) {
 			$out[ $key ] = array( 'label' => $label, 'url' => $url );
 		}
+		if ( 'facebook' === $key && xanh_setting( 'facebook2' ) ) {
+			$out['facebook2'] = array(
+				'label' => xanh_setting( 'facebook2_label', 'Facebook 2' ),
+				'url'   => xanh_setting( 'facebook2' ),
+				'icon'  => 'facebook',
+			);
+		}
 	}
 	$zalo = preg_replace( '/\D/', '', (string) xanh_setting( 'zalo' ) );
 	if ( $zalo ) {

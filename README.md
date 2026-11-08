@@ -1,6 +1,8 @@
-# Website bán hàng XANH (WordPress + WooCommerce)
+# Website Sun Shines – Thảo Mộc Mogan (WordPress + WooCommerce)
 
-Website bán hàng tông xanh lá, làm theo gói "Thiết kế website theo yêu cầu – Gói nâng cao".
+**CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUN SHINES** · *Sun Shines – Trao sức khỏe, Gửi yêu thương*
+
+Website bán hàng tông xanh lá cho thương hiệu Sun Shines và dòng sản phẩm Thảo Mộc Mogan, làm theo gói "Thiết kế website theo yêu cầu – Gói nâng cao".
 
 - **Thiết kế UI (Figma):** https://www.figma.com/design/ZuQnD2KZLclZsbiW2IsxdY
 - **Nền tảng:** WordPress 6.5+ · WooCommerce · PHP 8.1+
@@ -10,7 +12,7 @@ Website bán hàng tông xanh lá, làm theo gói "Thiết kế website theo yê
   - `bin/setup-site.sh`: script tự cấu hình website (tiếng Việt, VNĐ, các trang, menu, dữ liệu mẫu)
   - `docker-compose.yml`: môi trường chạy thử trên máy
 
-> Thương hiệu "XANH", nội dung và sản phẩm hiện là **dữ liệu mẫu**. Tên, logo, màu và nội dung đều đổi được trong trang quản trị.
+> Tên công ty, slogan và 2 fanpage đã điền sẵn. Hotline, địa chỉ, email, sản phẩm và hình ảnh hiện là **dữ liệu mẫu**, chỉnh trong trang quản trị (*Cài đặt website*, *Sản phẩm*). Thư mục code vẫn mang tên kỹ thuật `xanh`/`xanh-core`; tên hiển thị là "Sun Shines".
 
 ---
 

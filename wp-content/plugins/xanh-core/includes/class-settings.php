@@ -22,6 +22,7 @@ class Xanh_Settings {
 				'title'  => __( 'Thông tin doanh nghiệp', 'xanh-core' ),
 				'fields' => array(
 					'company_name'  => array( 'label' => __( 'Tên công ty', 'xanh-core' ), 'type' => 'text' ),
+					'slogan'        => array( 'label' => __( 'Slogan', 'xanh-core' ), 'type' => 'text' ),
 					'address'       => array( 'label' => __( 'Địa chỉ', 'xanh-core' ), 'type' => 'text' ),
 					'hotline'       => array( 'label' => __( 'Hotline', 'xanh-core' ), 'type' => 'text' ),
 					'email'         => array( 'label' => __( 'Email', 'xanh-core' ), 'type' => 'email' ),
@@ -37,7 +38,13 @@ class Xanh_Settings {
 			'social'  => array(
 				'title'  => __( 'Liên kết mạng xã hội', 'xanh-core' ),
 				'fields' => array(
-					'facebook'  => array( 'label' => 'Facebook', 'type' => 'url' ),
+					'facebook'  => array( 'label' => __( 'Fanpage Facebook (chính)', 'xanh-core' ), 'type' => 'url' ),
+					'facebook2' => array( 'label' => __( 'Fanpage Facebook (thứ 2)', 'xanh-core' ), 'type' => 'url' ),
+					'facebook2_label' => array(
+						'label' => __( 'Tên hiển thị fanpage thứ 2', 'xanh-core' ),
+						'type'  => 'text',
+						'help'  => __( 'Ví dụ: Thảo Mộc Mogan', 'xanh-core' ),
+					),
 					'youtube'   => array( 'label' => 'YouTube', 'type' => 'url' ),
 					'instagram' => array( 'label' => 'Instagram', 'type' => 'url' ),
 					'tiktok'    => array( 'label' => 'TikTok', 'type' => 'url' ),
@@ -81,10 +88,11 @@ class Xanh_Settings {
 
 	public static function defaults() {
 		return array(
-			'company_name'  => 'Công ty TNHH XANH',
-			'address'       => '123 Đường ABC, Quận 1, TP. Hồ Chí Minh',
-			'hotline'       => '0900 000 000',
-			'email'         => 'lienhe@xanh.vn',
+			'company_name'  => 'CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUN SHINES',
+			'slogan'        => 'Trao sức khỏe, Gửi yêu thương',
+			'facebook'      => 'https://www.facebook.com/share/19uVvCc2Fd/',
+			'facebook2'     => 'https://www.facebook.com/share/1Guucfskuf/',
+			'facebook2_label' => 'Thảo Mộc Mogan',
 			'working_hours' => '8:00 – 18:00, Thứ 2 – Thứ 7',
 			'topbar_text'   => 'Miễn phí giao hàng cho đơn từ 500.000 ₫',
 			'quick_enabled' => 1,

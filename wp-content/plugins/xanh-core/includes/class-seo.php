@@ -175,6 +175,7 @@ class Xanh_SEO {
 			array_filter(
 				array(
 					Xanh_Settings::get( 'facebook' ),
+					Xanh_Settings::get( 'facebook2' ),
 					Xanh_Settings::get( 'youtube' ),
 					Xanh_Settings::get( 'instagram' ),
 					Xanh_Settings::get( 'tiktok' ),

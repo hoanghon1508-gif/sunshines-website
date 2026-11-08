@@ -12,7 +12,7 @@ DEMO=0
 [[ "${1:-}" == "--demo" ]] && DEMO=1
 
 SITE_URL="${SITE_URL:-http://localhost:8080}"
-SITE_TITLE="${SITE_TITLE:-XANH}"
+SITE_TITLE="${SITE_TITLE:-Sun Shines}"
 ADMIN_USER="${ADMIN_USER:-admin}"
 ADMIN_PASS="${ADMIN_PASS:-admin123}"
 ADMIN_EMAIL="${ADMIN_EMAIL:-admin@example.com}"
@@ -28,7 +28,7 @@ command wp language core install vi --activate || true
 command wp option update timezone_string "Asia/Ho_Chi_Minh"
 command wp option update date_format "d/m/Y"
 command wp option update time_format "H:i"
-command wp option update blogdescription "Sản phẩm chất lượng cho cuộc sống xanh hơn"
+command wp option update blogdescription "Trao sức khỏe, Gửi yêu thương"
 command wp rewrite structure '/%postname%/' --hard
 command wp option update default_comment_status closed
 
@@ -120,11 +120,13 @@ for id in "$P1" "$P2" "$P3" "$P4"; do command wp menu item add-post "Chính sác
 if [[ "$DEMO" == "1" ]]; then
 	echo "==> Dữ liệu mẫu"
 	CATS=()
-	for n in 1 2 3 4; do
-		slug="danh-muc-$n"
+	CAT_NAMES=("Thảo Mộc Mogan" "Danh mục 2" "Danh mục 3" "Danh mục 4")
+	CAT_SLUGS=("thao-moc-mogan" "danh-muc-2" "danh-muc-3" "danh-muc-4")
+	for n in 0 1 2 3; do
+		slug="${CAT_SLUGS[$n]}"
 		cid=$(command wp wc product_cat list --user="$ADMIN_USER" --slug="$slug" --field=id 2>/dev/null | head -n1)
 		if [[ -z "$cid" ]]; then
-			cid=$(command wp wc product_cat create --user="$ADMIN_USER" --name="Danh mục $n" --slug="$slug" --porcelain)
+			cid=$(command wp wc product_cat create --user="$ADMIN_USER" --name="${CAT_NAMES[$n]}" --slug="$slug" --porcelain)
 		fi
 		CATS+=("$cid")
 	done
@@ -149,10 +151,10 @@ if [[ "$DEMO" == "1" ]]; then
 		fi
 	done
 	if [[ -z "$(command wp post list --post_type=xanh_banner --field=ID 2>/dev/null)" ]]; then
-		bid=$(command wp post create --post_type=xanh_banner --post_status=publish --post_title="Sản phẩm chất lượng cho cuộc sống xanh hơn" --menu_order=1 --porcelain)
+		bid=$(command wp post create --post_type=xanh_banner --post_status=publish --post_title="Trao sức khỏe, Gửi yêu thương" --menu_order=1 --porcelain)
 		command wp post meta update "$bid" _xanh_location home_slider >/dev/null
 		command wp post meta update "$bid" _xanh_active 1 >/dev/null
-		command wp post meta update "$bid" _xanh_subtitle "Ưu đãi tháng này – giảm đến 30% cho nhiều sản phẩm." >/dev/null
+		command wp post meta update "$bid" _xanh_subtitle "Sun Shines mang đến các sản phẩm thảo mộc Mogan chọn lọc, an toàn và lành tính cho sức khỏe cả gia đình." >/dev/null
 		command wp post meta update "$bid" _xanh_link "$SITE_URL/san-pham/" >/dev/null
 		command wp post meta update "$bid" _xanh_button "Mua sắm ngay" >/dev/null
 	fi

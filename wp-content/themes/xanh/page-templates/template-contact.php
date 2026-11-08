@@ -61,7 +61,7 @@ while ( have_posts() ) :
 						)
 					);
 				} else {
-					esc_html_e( 'Vui lòng kích hoạt plugin XANH Core để dùng form liên hệ.', 'xanh' );
+					esc_html_e( 'Vui lòng kích hoạt plugin Sun Shines Core để dùng form liên hệ.', 'xanh' );
 				}
 				?>
 			</div>

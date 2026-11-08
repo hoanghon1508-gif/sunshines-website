@@ -13,6 +13,9 @@ defined( 'ABSPATH' ) || exit;
 	<div class="container site-footer__grid">
 		<div class="site-footer__col site-footer__brand">
 			<p class="site-footer__name"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
+			<?php if ( xanh_opt( 'slogan' ) ) : ?>
+				<p class="site-footer__slogan"><?php echo esc_html( xanh_opt( 'slogan' ) ); ?></p>
+			<?php endif; ?>
 			<ul class="contact-list">
 				<?php if ( xanh_opt( 'company_name' ) ) : ?>
 					<li><?php echo esc_html( xanh_opt( 'company_name' ) ); ?></li>
@@ -59,14 +62,14 @@ defined( 'ABSPATH' ) || exit;
 				<p class="site-footer__heading"><?php esc_html_e( 'Kết nối', 'xanh' ); ?></p>
 				<ul class="footer-menu footer-social">
 					<?php foreach ( xanh_social_links() as $key => $s ) : ?>
-						<li><a href="<?php echo esc_url( $s['url'] ); ?>" target="_blank" rel="noopener"><?php echo xanh_icon( $key, 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><?php echo esc_html( $s['label'] ); ?></a></li>
+						<li><a href="<?php echo esc_url( $s['url'] ); ?>" target="_blank" rel="noopener"><?php echo xanh_icon( $s['icon'] ?? $key, 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><?php echo esc_html( $s['label'] ); ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
 		<?php endif; ?>
 	</div>
 	<div class="container site-footer__bottom">
-		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'Bảo lưu mọi quyền.', 'xanh' ); ?></p>
+		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?><?php echo xanh_opt( 'company_name' ) ? ' – ' . esc_html( xanh_opt( 'company_name' ) ) : ''; ?>. <?php esc_html_e( 'Bảo lưu mọi quyền.', 'xanh' ); ?></p>
 	</div>
 </footer>
 
