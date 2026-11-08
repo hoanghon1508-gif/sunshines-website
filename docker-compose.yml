@@ -1,0 +1,57 @@
+# Môi trường chạy thử trên máy cá nhân.
+#   docker compose up -d
+#   docker compose run --rm cli bash /scripts/setup-site.sh --demo
+# Mở http://localhost:8080 (quản trị: http://localhost:8080/wp-admin, admin / admin123)
+
+services:
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: "1"
+    volumes:
+      - wp:/var/www/html
+      - ./wp-content/themes/xanh:/var/www/html/wp-content/themes/xanh
+      - ./wp-content/plugins/xanh-core:/var/www/html/wp-content/plugins/xanh-core
+
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: ["tools"]
+    user: "33:33"
+    depends_on:
+      - db
+      - wordpress
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      SITE_URL: http://localhost:8080
+    volumes:
+      - wp:/var/www/html
+      - ./wp-content/themes/xanh:/var/www/html/wp-content/themes/xanh
+      - ./wp-content/plugins/xanh-core:/var/www/html/wp-content/plugins/xanh-core
+      - ./bin:/scripts:ro
+
+volumes:
+  db:
+  wp:
