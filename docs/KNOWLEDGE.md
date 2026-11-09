@@ -20,6 +20,7 @@ Ai tham gia dự án (người hoặc AI) nên đọc file này trước. Tiến
 | Fanpage 1 (Sun Shines) | https://www.facebook.com/share/19uVvCc2Fd/ |
 | Fanpage 2 (Thảo Mộc Mogan) | https://www.facebook.com/share/1Guucfskuf/ |
 | Màu thương hiệu | Xanh lá (theo logo: xanh lá chuyển sắc `#1F9A43 → #45C95A`, điểm nhấn vàng chanh `#D9E021`) |
+| Hosting | **iNET** (Công ty TNHH Phần mềm iNET, inet.vn), thường dùng DirectAdmin; đã mua 09/11, chưa cài WordPress |
 | Quản lý bán hàng | Pancake POS (chưa kết nối API, khách không cung cấp API key) |
 | GitHub | https://github.com/hoanghon1508-gif/sunshines-website (nhánh `main`) |
 | Figma | https://www.figma.com/design/ZuQnD2KZLclZsbiW2IsxdY (**tạm dừng**, xem mục 3) |
