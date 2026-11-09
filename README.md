@@ -77,6 +77,9 @@ Code theme và plugin được gắn trực tiếp vào container, sửa file l�
 
 ## 3. Đưa lên hosting thật
 
+> **Hosting không có SSH:** làm theo [`docs/HUONG-DAN-CAI-DAT.md`](docs/HUONG-DAN-CAI-DAT.md): tải 2 file zip (`bash bin/build-zips.sh`) rồi bấm **Cài đặt website → Thiết lập nhanh**.
+
+
 1. Cài WordPress mới trên hosting (đa số hosting có nút cài 1-click).
 2. Tải 2 thư mục lên qua FTP hoặc File Manager:
    - `wp-content/themes/xanh` → `wp-content/themes/`

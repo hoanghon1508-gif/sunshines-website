@@ -24,6 +24,7 @@ require_once XANH_CORE_DIR . 'includes/class-leads.php';
 require_once XANH_CORE_DIR . 'includes/class-security.php';
 require_once XANH_CORE_DIR . 'includes/class-seo.php';
 require_once XANH_CORE_DIR . 'includes/class-performance.php';
+require_once XANH_CORE_DIR . 'includes/class-setup.php';
 require_once XANH_CORE_DIR . 'includes/functions.php';
 
 Xanh_Settings::init();
@@ -33,6 +34,7 @@ Xanh_Leads::init();
 Xanh_Security::init();
 Xanh_SEO::init();
 Xanh_Performance::init();
+Xanh_Setup::init();
 
 register_activation_hook( __FILE__, array( 'Xanh_Roles', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'Xanh_Roles', 'deactivate' ) );

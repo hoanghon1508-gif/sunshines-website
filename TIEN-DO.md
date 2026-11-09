@@ -5,7 +5,7 @@ Cập nhật: 09/11/2026
 ## ▶ Trạng thái hiện tại (cuối ngày 09/11/2026)
 
 - Website **đã xong phần xây dựng** và đã chạy thử trên máy cloud; toàn bộ code nằm trên GitHub (`main`).
-- **Chưa có WordPress thật:** khách đang thanh toán hosting. Chưa cài lên hosting nào.
+- **Khách đã mua hosting (09/11)**, chưa cài WordPress. Hướng dẫn: `docs/HUONG-DAN-CAI-DAT.md` (8 bước, không cần SSH). File cài: `bash bin/build-zips.sh`. Plugin có nút **Cài đặt website → Thiết lập nhanh** (đã chạy thử trên site mới, chạy lại an toàn).
 - Figma **tạm dừng** (hết lượt gói Starter); duyệt bằng ảnh chụp màn hình.
 - Lần cuối khách duyệt: 4 ảnh chụp (trang chủ, sản phẩm, liên hệ desktop + trang chủ mobile), chưa có góp ý.
 
