@@ -325,6 +325,12 @@ ul.products.columns-3 { grid-template-columns: repeat(3, 1fr); }
 	.spotlight__actions .btn { flex: 1; }
 }
 
+/* Câu lưu ý sản phẩm */
+.disclaimer { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0; padding: 10px 14px; border-radius: var(--radius-sm); background: #fffbeb; border: 1px solid #fde68a; color: #92400e; font-size: 14px; font-weight: 500; line-height: 1.5; }
+.disclaimer svg { flex: 0 0 auto; margin-top: 2px; }
+.disclaimer--spotlight { margin: 0 0 24px; }
+.site-footer__disclaimer { margin: 0 0 6px !important; opacity: .85 !important; font-style: italic; }
+
 /* ---------- Promo / lead form ---------- */
 .promo {
 	display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap;

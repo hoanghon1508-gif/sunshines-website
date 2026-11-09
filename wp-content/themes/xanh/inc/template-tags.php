@@ -15,6 +15,16 @@ function xanh_opt( $key, $fallback = '' ) {
 }
 
 /**
+ * Câu lưu ý bắt buộc cho sản phẩm (không phải là thuốc…).
+ *
+ * @param string $class Class bổ sung.
+ */
+function xanh_disclaimer( $class = '' ) {
+	$text = xanh_opt( 'product_disclaimer', 'Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.' );
+	return '<p class="disclaimer ' . esc_attr( $class ) . '">' . xanh_icon( 'shield', 16 ) . '<span>' . esc_html( $text ) . '</span></p>';
+}
+
+/**
  * Logo website.
  */
 function xanh_logo() {

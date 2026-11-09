@@ -45,6 +45,7 @@ $features = array_filter( array_map( 'trim', explode( "\n", (string) $product->g
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
+			<?php echo xanh_disclaimer( 'disclaimer--spotlight' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<div class="spotlight__actions">
 				<a class="btn btn--primary btn--lg" href="<?php echo esc_url( $buy_url ); ?>" rel="nofollow"><?php esc_html_e( 'Mua ngay', 'xanh' ); ?></a>
 				<a class="btn btn--outline btn--lg" href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php esc_html_e( 'Xem chi tiết', 'xanh' ); ?></a>

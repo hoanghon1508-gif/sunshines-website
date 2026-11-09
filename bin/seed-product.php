@@ -64,7 +64,8 @@ $product->set_description(
 <h2>Hướng dẫn bảo quản</h2>
 <p>Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</p>
 <h2>Cảnh báo</h2>
-<p>Không sử dụng sản phẩm quá hạn hoặc bao bì không còn nguyên vẹn.</p>'
+<p>Không sử dụng sản phẩm quá hạn hoặc bao bì không còn nguyên vẹn.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>'
 );
 if ( $image_id ) {
 	$product->set_image_id( $image_id );

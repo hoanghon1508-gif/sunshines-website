@@ -109,6 +109,17 @@ add_action(
 );
 
 /**
+ * Câu lưu ý "không phải là thuốc" ngay dưới mô tả ngắn.
+ */
+add_action(
+	'woocommerce_single_product_summary',
+	static function () {
+		echo xanh_disclaimer(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	},
+	21
+);
+
+/**
  * Số sản phẩm liên quan.
  */
 add_filter(

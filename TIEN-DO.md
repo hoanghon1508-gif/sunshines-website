@@ -33,8 +33,9 @@ Cập nhật: 09/11/2026
 - [ ] Figma mobile: cập nhật thanh liên hệ cố định ở đáy cho khớp code.
 - [x] Logo Sun Shines (tạm): đã gắn vào theme (`assets/images/logo-mark.webp`, favicon `site-icon.png`) và Figma. Khi có file logo gốc chất lượng cao (PNG nền trong suốt/SVG) thì thay vào hoặc tải lên ở *Giao diện → Tuỳ biến → Logo*.
 - [x] Sản phẩm thật (tạm thời 1 sản phẩm): **Thảo Mộc Mogan – hộp 30 gói × 5g – 390.000 ₫**. Thành phần, cách dùng, bảo quản, cảnh báo lấy từ bao bì. Ảnh `assets/images/thao-moc-mogan.jpg`. Tạo bằng `bin/seed-product.php` (setup-site.sh tự chạy). Trang chủ tự hiện khối giới thiệu khi chỉ có 1 sản phẩm, có từ 2 sản phẩm thì chuyển sang lưới.
+- [x] Câu "Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh." hiện ở trang sản phẩm (dưới mô tả ngắn), khối giới thiệu trang chủ, mô tả chi tiết và chân trang. Sửa câu trong *Cài đặt website → Câu lưu ý sản phẩm*.
 - [ ] Thêm sản phẩm khác từ Pancake POS (khi khách gửi ảnh chụp hoặc file Excel).
-- [ ] **Figma đang cập nhật dở (09/11):** lệnh đổi sang 1 sản phẩm lỗi giữa chừng, rồi gói Figma Starter hết lượt gọi MCP. Cần kiểm tra lại các frame "Trang chủ - Desktop", "Trang chủ - Mobile", "Chi tiết sản phẩm - Desktop" (khối sản phẩm, ảnh hero, ảnh sản phẩm), rồi làm nốt: trang Danh mục (giữ 1 thẻ), Giỏ hàng (1 sản phẩm, 390.000 ₫), gắn ảnh hộp Mogan vào các khung ảnh.
+- [ ] **Figma đang cập nhật dở (09/11):** lệnh đổi sang 1 sản phẩm lỗi giữa chừng, rồi gói Figma Starter hết lượt gọi MCP. Cần kiểm tra lại các frame "Trang chủ - Desktop", "Trang chủ - Mobile", "Chi tiết sản phẩm - Desktop" (khối sản phẩm, ảnh hero, ảnh sản phẩm), thêm câu "không phải là thuốc" vào thiết kế, rồi làm nốt: trang Danh mục (giữ 1 thẻ), Giỏ hàng (1 sản phẩm, 390.000 ₫), gắn ảnh hộp Mogan vào các khung ảnh.
 - [ ] Email công ty
 - [ ] Figma: vẽ thêm trang Giới thiệu, Tin tức (danh sách, chi tiết), Chính sách, và các trang mobile còn lại (nếu cần)
 - [ ] Hosting + tên miền, SSL, đưa web lên

@@ -69,6 +69,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 	</div>
 	<div class="container site-footer__bottom">
+		<p class="site-footer__disclaimer"><?php echo esc_html( xanh_opt( 'product_disclaimer', 'Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.' ) ); ?></p>
 		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?><?php echo xanh_opt( 'company_name' ) ? ' – ' . esc_html( xanh_opt( 'company_name' ) ) : ''; ?>. <?php esc_html_e( 'Bảo lưu mọi quyền.', 'xanh' ); ?></p>
 	</div>
 </footer>

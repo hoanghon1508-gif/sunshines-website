@@ -28,6 +28,11 @@ class Xanh_Settings {
 					'email'         => array( 'label' => __( 'Email', 'xanh-core' ), 'type' => 'email' ),
 					'working_hours' => array( 'label' => __( 'Giờ làm việc', 'xanh-core' ), 'type' => 'text' ),
 					'topbar_text'   => array( 'label' => __( 'Dòng thông báo trên cùng', 'xanh-core' ), 'type' => 'text' ),
+					'product_disclaimer' => array(
+						'label' => __( 'Câu lưu ý sản phẩm', 'xanh-core' ),
+						'type'  => 'text',
+						'help'  => __( 'Hiển thị ở trang sản phẩm, khối giới thiệu sản phẩm trang chủ và chân trang. Để trống sẽ dùng câu mặc định: Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.', 'xanh-core' ),
+					),
 					'map_embed'     => array(
 						'label' => __( 'Link nhúng Google Maps', 'xanh-core' ),
 						'type'  => 'url',
@@ -90,6 +95,7 @@ class Xanh_Settings {
 		return array(
 			'company_name'  => 'CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUN SHINES',
 			'slogan'        => 'Trao sức khỏe, Gửi yêu thương',
+			'product_disclaimer' => 'Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.',
 			'facebook'      => 'https://www.facebook.com/share/19uVvCc2Fd/',
 			'facebook2'     => 'https://www.facebook.com/share/1Guucfskuf/',
 			'facebook2_label' => 'Thảo Mộc Mogan',
