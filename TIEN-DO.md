@@ -2,6 +2,18 @@
 
 Cập nhật: 09/11/2026
 
+## ▶ Trạng thái hiện tại (cuối ngày 09/11/2026)
+
+- Website **đã xong phần xây dựng** và đã chạy thử trên máy cloud; toàn bộ code nằm trên GitHub (`main`).
+- **Chưa có WordPress thật:** khách đang thanh toán hosting. Chưa cài lên hosting nào.
+- Figma **tạm dừng** (hết lượt gói Starter); duyệt bằng ảnh chụp màn hình.
+- Lần cuối khách duyệt: 4 ảnh chụp (trang chủ, sản phẩm, liên hệ desktop + trang chủ mobile), chưa có góp ý.
+
+**Bắt đầu phiên sau:** hỏi khách (1) nhà cung cấp hosting và loại trang quản trị (cPanel/DirectAdmin), (2) tên miền, (3) có SSH/FTP không;
+sau đó làm theo `docs/PLAN.md`, giai đoạn 2. Thông tin đăng nhập hosting: chỉ nhận qua ô bảo mật, **không** để khách dán vào chat.
+
+**Đang chờ khách:** hosting + tên miền · email công ty · xác nhận số Zalo · số tài khoản nhận chuyển khoản · chính sách giao hàng/ngưỡng miễn phí ship · nội dung trang Giới thiệu & 4 trang chính sách · MST/GPKD cho chân trang · file logo gốc · sản phẩm khác từ Pancake POS (nếu có) · góp ý về ảnh chụp giao diện.
+
 ## Thông tin khách hàng
 - Công ty: **CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUN SHINES**
 - Thương hiệu hiển thị: **Sun Shines**. Slogan: *Trao sức khỏe, Gửi yêu thương*
