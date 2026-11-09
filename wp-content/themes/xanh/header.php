@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
 				}
 				$topbar = xanh_opt( 'topbar_text' );
 				if ( $topbar ) {
-					echo '<span class="topbar__dot" aria-hidden="true">·</span>' . esc_html( $topbar );
+					echo '<span class="topbar__note"><span class="topbar__dot" aria-hidden="true">·</span>' . esc_html( $topbar ) . '</span>';
 				}
 				?>
 			</p>

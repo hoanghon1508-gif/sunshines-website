@@ -58,15 +58,28 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 /**
  * Trang chi tiết: % giảm giá cạnh giá + form đăng ký nhận tư vấn.
  */
+/**
+ * Nhãn "Giảm X%" nằm cùng dòng với giá (chỉ áp dụng cho khối giá chính của trang chi tiết).
+ */
+function xanh_single_price_badge( $html, $product ) {
+	$pct = xanh_discount_percent( $product );
+	if ( $pct ) {
+		/* translators: %d: percent */
+		$html .= ' <span class="badge badge--sale single-discount">' . esc_html( sprintf( __( 'Giảm %d%%', 'xanh' ), $pct ) ) . '</span>';
+	}
+	return $html;
+}
 add_action(
 	'woocommerce_single_product_summary',
 	static function () {
-		global $product;
-		$pct = xanh_discount_percent( $product );
-		if ( $pct ) {
-			/* translators: %d: percent */
-			echo '<p class="single-discount"><span class="badge badge--sale">' . esc_html( sprintf( __( 'Giảm %d%%', 'xanh' ), $pct ) ) . '</span></p>';
-		}
+		add_filter( 'woocommerce_get_price_html', 'xanh_single_price_badge', 10, 2 );
+	},
+	9
+);
+add_action(
+	'woocommerce_single_product_summary',
+	static function () {
+		remove_filter( 'woocommerce_get_price_html', 'xanh_single_price_badge', 10 );
 	},
 	11
 );

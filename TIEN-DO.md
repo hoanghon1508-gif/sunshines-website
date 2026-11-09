@@ -1,6 +1,6 @@
 # Tiến độ dự án – Website Sun Shines / Thảo Mộc Mogan
 
-Cập nhật: 08/11/2026
+Cập nhật: 09/11/2026
 
 ## Thông tin khách hàng
 - Công ty: **CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUN SHINES**
@@ -21,9 +21,16 @@ Cập nhật: 08/11/2026
 - [x] Script `bin/setup-site.sh` (tiếng Việt, VNĐ, COD + chuyển khoản, trang, menu, dữ liệu mẫu) và `docker-compose.yml`
 - [x] Kiểm tra cú pháp PHP, JS và shell
 - [x] Đẩy code lên GitHub
+- [x] **Chạy thử trên WordPress thật** (WordPress + WooCommerce + SQLite, máy thử cloud, 09/11):
+  - Mọi trang trả về 200, không có lỗi PHP/JS, không tràn ngang trên mobile (iPhone 13).
+  - Thêm vào giỏ → giỏ hàng → thanh toán chạy được (COD + chuyển khoản).
+  - Form liên hệ lưu khách vào *Khách hàng (form)*; form gửi kiểu bot bị chặn.
+  - Đã sửa: thanh liên hệ cố định đáy màn hình trên mobile, topbar mobile gọn, nhãn % giảm cùng dòng giá,
+    SĐT bắt buộc khi thanh toán, bỏ viền đôi trang giỏ hàng/thanh toán.
 
 ## Việc còn lại
-- [ ] **Chạy thử website thật** (Docker hoặc hosting) và sửa lỗi nếu có. Code mới được kiểm tra cú pháp, chưa chạy trên WordPress.
+- [ ] Kiểm tra lại trên hosting thật với gói tiếng Việt: máy thử không tải được bản dịch, nên các chữ của WooCommerce ("Add to cart", "Related products"…) còn tiếng Anh. `setup-site.sh` có bước cài tiếng Việt.
+- [ ] Figma mobile: cập nhật thanh liên hệ cố định ở đáy cho khớp code.
 - [ ] Logo gốc: tải file lên (Figma + *Giao diện → Tuỳ biến → Logo*). Hiện đang dùng biểu tượng SVG vẽ lại.
 - [ ] Danh sách sản phẩm Mogan thật (tên, giá, ảnh). Sản phẩm lấy từ Pancake POS, đang chờ file xuất Excel hoặc danh sách.
 - [ ] Email công ty

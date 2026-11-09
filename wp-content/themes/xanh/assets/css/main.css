@@ -169,6 +169,7 @@ button { font: inherit; }
 
 @media (max-width: 960px) {
 	.topbar__social { display: none; }
+	.topbar__note { display: none; }
 	.topbar__inner { justify-content: center; text-align: center; }
 	.navbar__inner { min-height: 60px; gap: 8px; }
 	.navbar__toggle { display: inline-flex; }
@@ -473,12 +474,11 @@ ul.products.columns-3 { grid-template-columns: repeat(3, 1fr); }
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
 	display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 0;
-	padding: 16px 20px; border-radius: var(--radius) var(--radius) 0 0; background: var(--c-primary-50);
+	padding: 16px 20px; margin-bottom: 20px; border-radius: var(--radius); background: var(--c-primary-50);
 	color: var(--c-primary-700); font-size: 34px; font-weight: 800;
 }
 .woocommerce div.product p.price del { font-size: 18px; }
-.single-discount { margin: 0 0 20px; padding: 0 20px 16px; background: var(--c-primary-50); border-radius: 0 0 var(--radius) var(--radius); }
-.woocommerce div.product p.price:not(:has(+ .single-discount)) { border-radius: var(--radius); margin-bottom: 20px; }
+.woocommerce div.product p.price .single-discount { order: 3; font-size: 14px; padding: 4px 10px; }
 .woocommerce div.product .woocommerce-product-details__short-description { color: var(--c-muted); }
 .woocommerce div.product form.cart { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 24px 0; }
 .woocommerce div.product form.cart div.quantity { float: none; margin: 0; }
@@ -522,9 +522,11 @@ ul.products.columns-3 { grid-template-columns: repeat(3, 1fr); }
 .wp-element-button.wc-block-components-button { background: var(--c-primary-600) !important; color: #fff !important; border-radius: var(--radius-sm) !important; font-weight: 600; }
 .wc-block-components-button:not(.is-link):hover { background: var(--c-primary-700) !important; }
 .wc-block-components-totals-footer-item .wc-block-components-totals-item__value { color: var(--c-primary-700); }
-.wc-block-cart,
-.wc-block-checkout { background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--radius-lg); padding: 24px; }
-@media (max-width: 600px) { .wc-block-cart, .wc-block-checkout { padding: 12px; border-radius: var(--radius); } }
+.entry-content--wc > .wp-block-woocommerce-cart,
+.entry-content--wc > .wp-block-woocommerce-checkout { background: var(--c-card); border: 1px solid var(--c-border); border-radius: var(--radius-lg); padding: 24px; }
+.entry-content--wc .wc-block-cart,
+.entry-content--wc .wc-block-checkout { border: 0; padding: 0; }
+@media (max-width: 600px) { .entry-content--wc > .wp-block-woocommerce-cart, .entry-content--wc > .wp-block-woocommerce-checkout { padding: 12px; border-radius: var(--radius); } }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 440px 1fr; gap: 40px; align-items: start; }
@@ -571,4 +573,15 @@ ul.products.columns-3 { grid-template-columns: repeat(3, 1fr); }
 .quick-contact__btn--zalo { background: #0068ff; font-size: 13px; font-weight: 700; }
 .quick-contact__btn--messenger { background: #0084ff; }
 @keyframes xanh-pulse { 0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, .5); } 70% { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0); } 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); } }
-@media (max-width: 768px) { .quick-contact { right: 12px; bottom: 16px; gap: 10px; } .quick-contact__btn { width: 48px; height: 48px; } }
+.quick-contact__label { display: none; }
+/* Mobile: thanh liên hệ cố định ở đáy màn hình, không che nội dung. */
+@media (max-width: 768px) {
+	body { padding-bottom: 56px; }
+	.quick-contact { left: 0; right: 0; bottom: 0; flex-direction: row; gap: 0; box-shadow: 0 -2px 12px rgba(15, 23, 42, .12); }
+	.quick-contact__btn { flex: 1; display: flex; gap: 8px; width: auto; height: 56px; border-radius: 0; box-shadow: none; animation: none; font-size: 15px; font-weight: 600; }
+	.quick-contact__btn:hover { transform: none; }
+	.quick-contact__btn--phone { order: -1; }
+	.quick-contact__label { display: inline; }
+	.quick-contact__zalo { display: none; }
+	.quick-contact__btn--zalo::before { content: "Zalo"; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #0068ff; font-size: 9px; font-weight: 800; }
+}

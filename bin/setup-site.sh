@@ -50,6 +50,9 @@ command wp option update woocommerce_weight_unit "kg"
 command wp option update woocommerce_dimension_unit "cm"
 command wp option update woocommerce_calc_taxes "no"
 command wp option update woocommerce_enable_guest_checkout "yes"
+command wp option update woocommerce_checkout_phone_field "required"
+command wp option update woocommerce_checkout_company_field "hidden"
+command wp option update woocommerce_checkout_address_2_field "hidden"
 command wp option update woocommerce_coming_soon "no"
 command wp option update woocommerce_onboarding_profile --format=json '{"skipped":true}'
 command wp option update woocommerce_cod_settings --format=json \
