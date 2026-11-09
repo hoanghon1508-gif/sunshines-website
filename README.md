@@ -6,11 +6,13 @@ Website bán hàng tông xanh lá cho thương hiệu Sun Shines và dòng sản
 
 - **Thiết kế UI (Figma):** https://www.figma.com/design/ZuQnD2KZLclZsbiW2IsxdY
 - **Nền tảng:** WordPress 6.5+ · WooCommerce · PHP 8.1+
+- **Tài liệu dự án:** [`docs/KNOWLEDGE.md`](docs/KNOWLEDGE.md) (kiến thức, quyết định, kiến trúc) · [`docs/PLAN.md`](docs/PLAN.md) (kế hoạch) · [`TIEN-DO.md`](TIEN-DO.md) (tiến độ)
 - **Mã nguồn trong repo:**
   - `wp-content/themes/xanh`: theme giao diện (desktop, tablet, mobile)
   - `wp-content/plugins/xanh-core`: plugin chức năng (banner, form khách hàng, cài đặt, phân quyền, bảo mật, SEO)
   - `bin/setup-site.sh`: script tự cấu hình website (tiếng Việt, VNĐ, các trang, menu, dữ liệu mẫu)
   - `docker-compose.yml`: môi trường chạy thử trên máy
+  - `tools/test-local`: chạy thử không cần Docker (PHP + SQLite)
 
 > Tên công ty, slogan và 2 fanpage đã điền sẵn. Hotline, địa chỉ và Zalo đã điền sẵn. Email, sản phẩm và hình ảnh hiện là **dữ liệu mẫu**, chỉnh trong trang quản trị (*Cài đặt website*, *Sản phẩm*). Thư mục code vẫn mang tên kỹ thuật `xanh`/`xanh-core`; tên hiển thị là "Sun Shines".
 

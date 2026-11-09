@@ -28,6 +28,8 @@ Cập nhật: 09/11/2026
   - Đã sửa: thanh liên hệ cố định đáy màn hình trên mobile, topbar mobile gọn, nhãn % giảm cùng dòng giá,
     SĐT bắt buộc khi thanh toán, bỏ viền đôi trang giỏ hàng/thanh toán.
 
+- [x] Tài liệu dự án: `docs/KNOWLEDGE.md`, `docs/PLAN.md`, `CLAUDE.md`; bộ chạy thử `tools/test-local` (đã kiểm tra chạy từ đầu)
+
 ## Việc còn lại
 - [ ] Kiểm tra lại trên hosting thật với gói tiếng Việt: máy thử không tải được bản dịch, nên các chữ của WooCommerce ("Add to cart", "Related products"…) còn tiếng Anh. `setup-site.sh` có bước cài tiếng Việt.
 - [x] Logo Sun Shines (tạm): đã gắn vào theme (`assets/images/logo-mark.webp`, favicon `site-icon.png`) và Figma. Khi có file logo gốc chất lượng cao (PNG nền trong suốt/SVG) thì thay vào hoặc tải lên ở *Giao diện → Tuỳ biến → Logo*.
@@ -37,5 +39,5 @@ Cập nhật: 09/11/2026
 - [~] **Figma: TẠM DỪNG** (gói Starter hết lượt MCP, khách chọn không nâng cấp). Từ 09/11 làm trực tiếp trên WordPress, duyệt bằng ảnh chụp màn hình site chạy thử. File Figma giữ làm tham khảo; một số frame (trang chủ, chi tiết sản phẩm) đang cập nhật dở, không còn khớp 100% với web.
 - [ ] Email công ty
 - [ ] Nội dung trang Giới thiệu, Chính sách (đổi trả, giao hàng, bảo mật, thanh toán): làm trực tiếp trên WordPress khi khách gửi nội dung
-- [ ] Hosting + tên miền, SSL, đưa web lên
+- [ ] **Hosting + tên miền, SSL, đưa web lên** (khách đang thanh toán hosting, 09/11). Các bước: `docs/PLAN.md`, giai đoạn 2
 - [ ] Giai đoạn sau (ngoài phạm vi hiện tại): cổng thanh toán VNPay/Casso (+2.000.000 ₫/cổng nếu thêm), đồng bộ Pancake POS
