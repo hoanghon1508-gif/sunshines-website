@@ -41,6 +41,8 @@ sau đó làm theo `docs/PLAN.md`, giai đoạn 2. Thông tin đăng nhập host
     SĐT bắt buộc khi thanh toán, bỏ viền đôi trang giỏ hàng/thanh toán.
 
 - [x] Tài liệu dự án: `docs/KNOWLEDGE.md`, `docs/PLAN.md`, `CLAUDE.md`; bộ chạy thử `tools/test-local` (đã kiểm tra chạy từ đầu)
+- [x] Chạy thử trên Windows (Git Bash, không Docker): `setup.sh` dùng junction thay symlink và tự sửa symlink của plugin SQLite bị git clone thành file chữ. Cần PHP 8.3 (bật extension trong `php.ini`) + Composer.
+- [~] **Chuyển giao diện sang Next.js** (`web/`, theo yêu cầu 09/11): đã xong trang chủ, cửa hàng + lọc/sắp xếp, danh mục, chi tiết sản phẩm, giỏ hàng, thanh toán (COD/chuyển khoản), tin tức, giới thiệu + chính sách, liên hệ, tìm kiếm, 404, sitemap/robots, SEO (JSON-LD). Đã build và chạy thử desktop + mobile. **Chưa có:** trang quản trị, CSDL, email; đơn và khách đăng ký đang gửi qua webhook (`.env`). Xem `web/README.md`. Chưa làm: nối webhook nhận đơn, thay nội dung tạm của tin tức/chính sách, deploy Vercel.
 
 ## Việc còn lại
 - [ ] Kiểm tra lại trên hosting thật với gói tiếng Việt: máy thử không tải được bản dịch, nên các chữ của WooCommerce ("Add to cart", "Related products"…) còn tiếng Anh. `setup-site.sh` có bước cài tiếng Việt.

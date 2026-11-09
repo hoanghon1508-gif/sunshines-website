@@ -9,6 +9,7 @@ Khách hàng giao tiếp bằng **tiếng Việt** (thường không dấu), nê
 2. [`docs/KNOWLEDGE.md`](docs/KNOWLEDGE.md): thông tin khách hàng, quyết định đã chốt, kiến trúc, bẫy đã gặp.
 3. [`docs/PLAN.md`](docs/PLAN.md): các giai đoạn và bước tiếp theo.
 4. [`README.md`](README.md): đối chiếu báo giá, hướng dẫn cài đặt và quản trị.
+5. [`web/README.md`](web/README.md): bản Next.js (chuyển từ theme WordPress, deploy được lên Vercel).
 
 ## Quy tắc
 

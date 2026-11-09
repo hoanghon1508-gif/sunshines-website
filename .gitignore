@@ -9,3 +9,9 @@ vendor/
 /wp-content/cache/
 /wp-content/upgrade/
 /dist/
+
+# Next.js
+.next/
+next-env.d.ts
+*.tsbuildinfo
+web/.env*.local

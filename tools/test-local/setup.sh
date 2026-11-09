@@ -36,11 +36,24 @@ rm -rf "$SITE"
 cp -r "$WORK/wp" "$SITE"
 rm -f "$SITE/composer.json"
 cp -rL "$SQLITE_PKG" "$SITE/wp-content/plugins/sqlite-database-integration"
+# Windows: git clone biến symlink thành file chữ, thay bằng bản sao thư mục thật.
+if [[ -f "$SITE/wp-content/plugins/sqlite-database-integration/wp-includes/database" ]]; then
+	rm -f "$SITE/wp-content/plugins/sqlite-database-integration/wp-includes/database"
+	cp -r "$WORK/sqlite/packages/mysql-on-sqlite/src" "$SITE/wp-content/plugins/sqlite-database-integration/wp-includes/database"
+fi
 sed "s#{SQLITE_IMPLEMENTATION_FOLDER_PATH}#$SITE/wp-content/plugins/sqlite-database-integration#; s#{SQLITE_PLUGIN}#sqlite-database-integration/load.php#g" \
 	"$SQLITE_PKG/db.copy" > "$SITE/wp-content/db.php"
 (cd "$SITE/wp-content/plugins" && unzip -q "$WORK/woo.zip")
-ln -s "$REPO/wp-content/themes/xanh" "$SITE/wp-content/themes/xanh"
-ln -s "$REPO/wp-content/plugins/xanh-core" "$SITE/wp-content/plugins/xanh-core"
+# Liên kết thư mục: Linux/macOS dùng symlink; Windows (Git Bash) dùng junction vì symlink cần quyền admin.
+link_dir() {
+	if [[ "$(uname -s)" == MINGW* || "$(uname -s)" == MSYS* ]]; then
+		cmd //c mklink //J "$(cygpath -w "$2")" "$(cygpath -w "$1")" > /dev/null
+	else
+		ln -s "$1" "$2"
+	fi
+}
+link_dir "$REPO/wp-content/themes/xanh" "$SITE/wp-content/themes/xanh"
+link_dir "$REPO/wp-content/plugins/xanh-core" "$SITE/wp-content/plugins/xanh-core"
 mkdir -p "$SITE/wp-content/database"
 cat > "$SITE/wp-config.php" <<'PHP'
 <?php
