@@ -22,13 +22,29 @@ function xanh_logo() {
 		the_custom_logo();
 		return;
 	}
+	// Logo Sun Shines đi kèm theme (biểu tượng mặt trời + lá) + tên website.
 	printf(
-		'<a class="logo" href="%1$s" rel="home">%2$s<span class="logo__text">%3$s</span></a>',
+		'<a class="logo" href="%1$s" rel="home"><img class="logo__mark" src="%2$s" width="54" height="48" alt="" decoding="async" /><span class="logo__text">%3$s</span></a>',
 		esc_url( home_url( '/' ) ),
-		xanh_leaf_logo( 44 ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG tĩnh.
+		esc_url( XANH_THEME_URI . '/assets/images/logo-mark.webp' ),
 		esc_html( get_bloginfo( 'name' ) )
 	);
 }
+
+/**
+ * Favicon mặc định (logo Sun Shines) khi chưa đặt "Biểu tượng trang web" trong Tuỳ biến.
+ */
+add_action(
+	'wp_head',
+	static function () {
+		if ( has_site_icon() ) {
+			return;
+		}
+		$icon = XANH_THEME_URI . '/assets/images/site-icon.png';
+		printf( '<link rel="icon" href="%1$s" sizes="512x512" type="image/png" />' . "\n" . '<link rel="apple-touch-icon" href="%1$s" />' . "\n", esc_url( $icon ) );
+	},
+	5
+);
 
 /**
  * Menu dự phòng khi chưa tạo menu trong Giao diện → Menu.

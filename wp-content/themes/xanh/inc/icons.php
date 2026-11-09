@@ -49,17 +49,3 @@ function xanh_icon( $name, $size = 24 ) {
 		$paths[ $name ]
 	);
 }
-
-/**
- * Biểu tượng Sun Shines (mặt trời + 2 lá) dạng SVG, dùng khi chưa tải file logo lên
- * (Giao diện → Tuỳ biến → Nhận dạng website → Logo).
- */
-function xanh_leaf_logo( $size = 40 ) {
-	static $n = 0;
-	$gid = 'ssg' . ( ++$n );
-	return sprintf(
-		'<svg width="%1$d" height="%1$d" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="%2$s" x1="20" y1="56" x2="58" y2="10" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1F8F3A"/><stop offset="1" stop-color="#8CC63F"/></linearGradient></defs><g stroke="#D9E021" stroke-width="2.4" stroke-linecap="round"><path d="M12.8 34.8A14 14 0 0 1 36.7 21"/><path d="M9.3 33L.9 34.4M9.6 25.6l-8.4-2.3M13 19.1l-6.7-5.7M18.8 14.6l-3.7-8M26 13V4.2M33.2 14.6l3.7-8M39 19.1l6.7-5.7"/></g><path d="M34 50c0-18 10-32 24-40 2 18-8 32-24 40Z" fill="url(#%2$s)"/><path d="M32 50c-6-10-12-14-19-19 11-1 19 7 19 19Z" fill="url(#%2$s)"/><path d="M36.5 46c5.5-10 11.5-20 18-30M29.5 46c-3.5-5.5-7.5-9.5-12-12.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><path d="m33 50-2 12" stroke="#1F8F3A" stroke-width="2.6" stroke-linecap="round"/></svg>',
-		(int) $size,
-		esc_attr( $gid )
-	);
-}

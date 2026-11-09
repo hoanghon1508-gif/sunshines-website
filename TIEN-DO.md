@@ -31,7 +31,7 @@ Cập nhật: 09/11/2026
 ## Việc còn lại
 - [ ] Kiểm tra lại trên hosting thật với gói tiếng Việt: máy thử không tải được bản dịch, nên các chữ của WooCommerce ("Add to cart", "Related products"…) còn tiếng Anh. `setup-site.sh` có bước cài tiếng Việt.
 - [ ] Figma mobile: cập nhật thanh liên hệ cố định ở đáy cho khớp code.
-- [ ] Logo gốc: tải file lên (Figma + *Giao diện → Tuỳ biến → Logo*). Hiện đang dùng biểu tượng SVG vẽ lại.
+- [x] Logo Sun Shines (tạm): đã gắn vào theme (`assets/images/logo-mark.webp`, favicon `site-icon.png`) và Figma. Khi có file logo gốc chất lượng cao (PNG nền trong suốt/SVG) thì thay vào hoặc tải lên ở *Giao diện → Tuỳ biến → Logo*.
 - [ ] Danh sách sản phẩm Mogan thật (tên, giá, ảnh). Sản phẩm lấy từ Pancake POS, đang chờ file xuất Excel hoặc danh sách.
 - [ ] Email công ty
 - [ ] Figma: vẽ thêm trang Giới thiệu, Tin tức (danh sách, chi tiết), Chính sách, và các trang mobile còn lại (nếu cần)

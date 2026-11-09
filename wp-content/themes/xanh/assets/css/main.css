@@ -130,8 +130,9 @@ button { font: inherit; }
 .navbar__actions { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
 .logo, .custom-logo-link { display: inline-flex; align-items: center; gap: 8px; }
-.logo__text { font-size: 24px; font-weight: 800; color: var(--c-primary-700); text-transform: uppercase; white-space: nowrap; }
-.custom-logo { max-height: 48px; width: auto; }
+.logo__text { font-size: 24px; font-weight: 800; color: #22a045; background: linear-gradient(90deg, #1f9a43, #45c95a); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; white-space: nowrap; letter-spacing: .02em; }
+.custom-logo { max-height: 56px; width: auto; }
+.logo__mark { height: 48px; width: auto; }
 
 .site-nav { flex: 1 1 auto; display: flex; justify-content: center; }
 .site-nav__head { display: none; }
@@ -175,7 +176,7 @@ button { font: inherit; }
 	.navbar__toggle { display: inline-flex; }
 	.navbar__brand { flex: 1; display: flex; justify-content: center; }
 	.logo__text { font-size: 19px; }
-	.logo svg { width: 34px; height: 34px; }
+	.logo__mark { height: 36px; }
 	.navbar__actions { margin-left: 0; }
 	.navbar__actions [data-search-toggle] { display: none; }
 
