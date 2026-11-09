@@ -154,7 +154,10 @@ $shop   = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 's
 			)
 		);
 	}
-	if ( $featured ) :
+	if ( 1 === count( $featured ) ) :
+		// Cửa hàng chỉ có 1 sản phẩm → khối giới thiệu sản phẩm nổi bật.
+		get_template_part( 'template-parts/product', 'spotlight', array( 'product' => $featured[0] ) );
+	elseif ( $featured ) :
 		?>
 		<section class="section section--white">
 			<div class="container">

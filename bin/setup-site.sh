@@ -122,24 +122,6 @@ for id in "$P1" "$P2" "$P3" "$P4"; do command wp menu item add-post "Chính sác
 
 if [[ "$DEMO" == "1" ]]; then
 	echo "==> Dữ liệu mẫu"
-	# Tạm thời chỉ có dòng sản phẩm Thảo Mộc Mogan.
-	MOGAN=$(command wp wc product_cat list --user="$ADMIN_USER" --slug="thao-moc-mogan" --field=id 2>/dev/null | head -n1)
-	if [[ -z "$MOGAN" ]]; then
-		MOGAN=$(command wp wc product_cat create --user="$ADMIN_USER" --name="Thảo Mộc Mogan" --slug="thao-moc-mogan" --porcelain)
-	fi
-	PRICES=(320000 200000 560000 120000 350000 190000 650000 300000)
-	SALES=(250000 180000 420000 95000 310000 150000 520000 275000)
-	for i in $(seq 0 7); do
-		name="Thảo Mộc Mogan – Sản phẩm $((i + 1))"
-		if [[ -z "$(command wp post list --post_type=product --title="$name" --field=ID 2>/dev/null)" ]]; then
-			command wp wc product create --user="$ADMIN_USER" --name="$name" --type=simple \
-				--regular_price="${PRICES[$i]}" --sale_price="${SALES[$i]}" \
-				--featured=true --status=publish \
-				--short_description="Giới thiệu tóm tắt về sản phẩm: công dụng chính, chất liệu/thành phần, quy cách đóng gói." \
-				--description="Nội dung mô tả chi tiết sản phẩm được soạn trong trang quản trị." \
-				--categories="[{\"id\":${MOGAN}}]" >/dev/null
-		fi
-	done
 	for t in "Bí quyết chọn sản phẩm phù hợp cho gia đình bạn" "Lợi ích của thảo mộc trong chăm sóc sức khỏe hằng ngày" "Hướng dẫn bảo quản sản phẩm đúng cách"; do
 		if [[ -z "$(command wp post list --post_type=post --title="$t" --field=ID 2>/dev/null)" ]]; then
 			command wp post create --post_type=post --post_status=publish --post_title="$t" \
@@ -156,6 +138,9 @@ if [[ "$DEMO" == "1" ]]; then
 		command wp post meta update "$bid" _xanh_button "Mua sắm ngay" >/dev/null
 	fi
 fi
+
+echo "==> Sản phẩm Thảo Mộc Mogan (390.000 ₫, hộp 30 gói x 5g)"
+command wp eval-file "$(dirname "$0")/seed-product.php"
 
 command wp rewrite flush --hard
 command wp cache flush >/dev/null || true
