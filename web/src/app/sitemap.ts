@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { categories, products } from '@/lib/products';
-import { pages, posts } from '@/lib/content';
+import { pages, localPosts as posts } from '@/lib/content';
 import { site } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {

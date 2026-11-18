@@ -114,19 +114,29 @@ export function ProductCard({ product }: { product: Product }) {
 
 export function PostCard({ post, heading = 'h2' }: { post: Post; heading?: 'h2' | 'h3' }) {
   const H = heading;
-  const href = `/tin-tuc/${post.slug}`;
+  const ext = post.externalUrl;
+  const href = ext ?? `/tin-tuc/${post.slug}`;
+  // Bài trên fanpage: mở Facebook ở tab mới.
+  const Anchor = ({ className, children, ...rest }: React.ComponentProps<'a'>) =>
+    ext ? (
+      <a className={className} href={href} target="_blank" rel="noopener noreferrer" {...rest}>{children}</a>
+    ) : (
+      <Link className={className} href={href} {...(rest as object)}>{children}</Link>
+    );
+  const media = post.image ? (
+    <Image src={post.image} alt="" width={768} height={440} sizes="(max-width: 768px) 100vw, 400px" />
+  ) : (
+    <span className="img-placeholder"><Icon name="image" size={40} /></span>
+  );
   return (
     <article className="post-card">
-      <Link className="post-card__media" href={href} tabIndex={-1} aria-hidden="true">
-        {post.image ? (
-          <Image src={post.image} alt="" width={768} height={440} sizes="(max-width: 768px) 100vw, 400px" />
-        ) : (
-          <span className="img-placeholder"><Icon name="image" size={40} /></span>
-        )}
-      </Link>
+      <Anchor className="post-card__media" tabIndex={-1} aria-hidden="true">{media}</Anchor>
       <div className="post-card__body">
-        <time className="post-card__date" dateTime={post.date}>{formatDate(post.date)}</time>
-        <H className="post-card__title"><Link href={href}>{post.title}</Link></H>
+        <time className="post-card__date" dateTime={post.date}>
+          {formatDate(post.date)}
+          {ext && ' · Fanpage Facebook'}
+        </time>
+        <H className="post-card__title"><Anchor>{post.title}</Anchor></H>
         <p className="post-card__excerpt">{post.excerpt}</p>
       </div>
     </article>

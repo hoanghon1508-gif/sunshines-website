@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageHero, Pagination, PostCard } from '@/components/ui';
 import { POSTS_PER_PAGE, sortedPosts } from '@/lib/content';
+import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Tin tức',
@@ -23,6 +24,11 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
             {list.map((p) => <PostCard key={p.slug} post={p} />)}
           </div>
           <Pagination page={page} total={totalPages} hrefFor={(n) => (n > 1 ? `/tin-tuc?paged=${n}` : '/tin-tuc')} />
+          <p style={{ textAlign: 'center', marginTop: 32 }}>
+            <a className="btn btn--outline" href={site.fanpage} target="_blank" rel="noopener noreferrer">
+              Xem thêm trên fanpage Facebook
+            </a>
+          </p>
         </div>
       </div>
     </>

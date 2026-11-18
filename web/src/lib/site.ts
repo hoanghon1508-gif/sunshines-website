@@ -21,6 +21,8 @@ export const site = {
   messenger: '',
   /** Bản đồ Google Maps (chỉ nhận link https://www.google.com/maps/embed...). */
   mapEmbed: '',
+  /** Fanpage Sun Shines (trang công khai). */
+  fanpage: 'https://www.facebook.com/SunShinesVietNam',
   social: [
     { label: 'Facebook', url: 'https://www.facebook.com/share/19uVvCc2Fd/', icon: 'facebook' },
     { label: 'Thảo Mộc Mogan', url: 'https://www.facebook.com/share/1Guucfskuf/', icon: 'facebook' },

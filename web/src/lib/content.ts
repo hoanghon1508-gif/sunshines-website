@@ -12,39 +12,33 @@ export interface Post {
   date: string;
   category: string;
   image?: string;
+  /** Link bài viết trên fanpage Facebook. Có link này thì thẻ tin tức mở thẳng bài trên Facebook (tab mới), không có trang chi tiết riêng. */
+  externalUrl?: string;
 }
 
+/**
+ * Tin tức = bài viết trên fanpage. Thêm bài: copy link bài trên Facebook vào `externalUrl`,
+ * ghi tiêu đề, ngày đăng (YYYY-MM-DD) và 1–2 câu tóm tắt; ảnh đặt trong `public/images/news/` rồi điền `image`.
+ */
 export const posts: Post[] = [
   {
-    slug: 'bi-quyet-chon-san-pham-phu-hop-cho-gia-dinh-ban',
-    title: 'Bí quyết chọn sản phẩm phù hợp cho gia đình bạn',
-    excerpt: 'Đoạn tóm tắt ngắn của bài viết giúp người đọc nắm nhanh nội dung chính.',
-    content: '<p>Nội dung bài viết mẫu.</p>',
-    date: '2026-11-09',
-    category: 'Kiến thức',
-  },
-  {
-    slug: 'loi-ich-cua-thao-moc-trong-cham-soc-suc-khoe-hang-ngay',
-    title: 'Lợi ích của thảo mộc trong chăm sóc sức khỏe hằng ngày',
-    excerpt: 'Đoạn tóm tắt ngắn của bài viết giúp người đọc nắm nhanh nội dung chính.',
-    content: '<p>Nội dung bài viết mẫu.</p>',
-    date: '2026-11-08',
-    category: 'Kiến thức',
-  },
-  {
-    slug: 'huong-dan-bao-quan-san-pham-dung-cach',
-    title: 'Hướng dẫn bảo quản sản phẩm đúng cách',
-    excerpt: 'Đoạn tóm tắt ngắn của bài viết giúp người đọc nắm nhanh nội dung chính.',
-    content: '<p>Nội dung bài viết mẫu.</p>',
-    date: '2026-11-07',
-    category: 'Kiến thức',
+    slug: 'teambuilding-2026',
+    title: 'Sun Shines – Teambuilding 2026',
+    excerpt: 'Sun Shines – Trao sức khỏe, Gửi yêu thương. Hình ảnh hoạt động teambuilding 2026 của đội ngũ Sun Shines.',
+    content: '',
+    date: '2026-09-19',
+    category: 'Hoạt động',
+    externalUrl: 'https://www.facebook.com/reel/892992433893506/',
   },
 ];
+
+/** Bài có trang chi tiết riêng trên web (không tính bài dẫn sang Facebook). */
+export const localPosts = posts.filter((p) => !p.externalUrl);
 
 export const POSTS_PER_PAGE = 9;
 
 export function getPost(slug: string) {
-  return posts.find((p) => p.slug === slug);
+  return localPosts.find((p) => p.slug === slug);
 }
 
 export function sortedPosts() {

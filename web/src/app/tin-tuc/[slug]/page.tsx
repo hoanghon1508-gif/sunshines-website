@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Icon } from '@/components/Icon';
 import { Breadcrumbs, PostCard } from '@/components/ui';
-import { formatDate, getPost, posts, sortedPosts } from '@/lib/content';
+import { formatDate, getPost, localPosts as posts, sortedPosts } from '@/lib/content';
 import { site } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = getPost((await params).slug);
   if (!p) notFound();
-  const related = sortedPosts().filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 3);
+  const related = sortedPosts().filter((x) => x.slug !== p.slug && x.category === p.category && !x.externalUrl).slice(0, 3);
   const url = `${site.url}/tin-tuc/${p.slug}`;
   const schema = {
     '@context': 'https://schema.org',
