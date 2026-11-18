@@ -199,64 +199,7 @@ export const products: Product[] = [
     featured: false,
     createdAt: '2026-11-18',
   },
-  {
-    id: 8,
-    slug: 'dung-dich-ve-sinh-t-ladi',
-    name: 'Dung dịch vệ sinh T-Ladi',
-    categorySlug: 'cham-soc-ca-nhan',
-    price: 100000,
-    gallery: [],
-    showDisclaimer: false,
-    shortDescription: '<p>Dung dịch vệ sinh cá nhân hằng ngày, thương hiệu <strong>Ladi</strong>. Phù hợp cho cả nam và nữ.</p>',
-    description: `<h2>Giới thiệu</h2>
-<p>Dung dịch vệ sinh T-Ladi dùng để vệ sinh cá nhân hằng ngày, dành cho cả nam và nữ.</p>
-<h2>Thành phần</h2>
-<p>Aqua, Sodium, chiết xuất quả Cranberry, Glycol distearate, Lactobacillus, Alpha Glucan, Aloe Barbadensis Leaf Extract (chiết xuất lô hội), Glycerin, Polyquaternium 39, Citric acid, Alcohol, Sodium Benzoate, Potassium Sorbate, Parfum.</p>
-<h2>Lưu ý</h2>
-<p>Chỉ dùng ngoài da. Ngừng dùng nếu da bị kích ứng. Vui lòng đọc kỹ nhãn trên bao bì. Liên hệ hotline để được tư vấn.</p>`,
-    highlights: ['Dùng cho vệ sinh cá nhân hằng ngày, cả nam và nữ'],
-    inStock: true,
-    featured: false,
-    createdAt: '2026-11-18',
-  },
-  {
-    id: 9,
-    slug: 'vien-dat-ladi-ceek',
-    name: 'Viên đặt Ladi Ceek',
-    categorySlug: 'cham-soc-ca-nhan',
-    price: 0, // Cũ: 90.000 (gốc 1.200.000), nghi nhập thử, chờ khách xác nhận.
-    gallery: [],
-    shortDescription: '<p>Sản phẩm chiết xuất từ thảo dược, thương hiệu <strong>Ladi</strong>.</p>',
-    description: `<h2>Thành phần</h2>
-<p>Bạch chỉ, chiết xuất nghệ tây, Galla Chinensis, ngũ vị tử, Cornus officinalis, hạt hướng dương, phong lữ, Phellodendron Phellodendri, tơ hồng, Evodia, ngải cứu.</p>
-<h2>Lưu ý</h2>
-<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Phụ nữ mang thai, đang cho con bú và người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng. Liên hệ hotline để được tư vấn.</p>
-<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
-    highlights: ['Chiết xuất từ thảo dược (bạch chỉ, nghệ tây, ngũ vị tử, ngải cứu…)'],
-    inStock: true,
-    featured: false,
-    createdAt: '2026-11-18',
-  },
-  {
-    id: 10,
-    slug: 'marine-omega-120-vien',
-    name: 'Thực phẩm bảo vệ sức khỏe Marine Omega – Hộp 120 viên',
-    categorySlug: 'thuc-pham-bao-ve-suc-khoe',
-    price: 0, // Cũ: 390.000 (gốc 1.200.000), nghi nhập thử, chờ khách xác nhận.
-    gallery: [],
-    shortDescription: '<p>Thực phẩm bảo vệ sức khỏe dạng viên nang bổ sung <strong>Omega-3</strong> và dầu nhuyễn thể Krill Oil.</p><p>Quy cách: <strong>hộp 120 viên</strong>.</p>',
-    description: `<h2>Thành phần</h2>
-<p>Dầu cá, axit béo Omega-3 (EPA, DHA) và các axit béo Omega-3 khác, gelatin, glycerin, nước, dầu nhuyễn thể Krill Oil, tinh dầu chanh tự nhiên, vitamin E, màu caramel.</p>
-<h2>Quy cách</h2>
-<p>Hộp 120 viên.</p>
-<h2>Lưu ý</h2>
-<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng. Liên hệ hotline để được tư vấn.</p>
-<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
-    highlights: ['Bổ sung Omega-3 (EPA, DHA) và dầu nhuyễn thể Krill Oil', 'Quy cách: hộp 120 viên'],
-    inStock: true,
-    featured: false,
-    createdAt: '2026-11-18',
-  },
+  // (T-Ladi, Ladi Ceek, Marine Omega đã bỏ khỏi web theo yêu cầu khách ngày 18/11.)
   {
     id: 11,
     slug: 'bo-ca-phe-gland-3-thang',
