@@ -160,7 +160,7 @@ export const products: Product[] = [
     slug: 'ca-phe-bot',
     name: 'Cà phê bột G Land',
     categorySlug: 'ca-phe',
-    price: 100000, // Giá lấy từ bản WordPress cũ ("Cà phê hữu cơ Gland dạng bột túi 500g").
+    price: 650000, // Giá khách chốt 18/11 (bản WordPress cũ ghi 100.000).
     image: '/images/products/ca-phe-bot.webp',
     gallery: ['/images/products/ca-phe-bot.webp', '/images/products/ca-phe-bot-2.webp'],
     shortDescription:
@@ -288,6 +288,38 @@ export const products: Product[] = [
 <p>Bộ sản phẩm cà phê Gland, liệu trình 3 tháng. Theo thông tin trên trang cũ, sản phẩm sử dụng hạt cà phê hữu cơ, sản xuất theo tiêu chuẩn hữu cơ của Mỹ (USA Organic) (cần xác nhận lại).</p>
 <p>Liên hệ hotline để được tư vấn và báo giá.</p>`,
     highlights: ['Bộ sản phẩm liệu trình 3 tháng'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  // Combo 4 hộp Thảo Mộc Mogan: giá khách chốt 18/11 (1.480.000 cho 4 hộp, tương đương 370.000 ₫/hộp).
+  {
+    id: 13,
+    slug: 'combo-4-hop-thao-moc-mogan',
+    name: 'Combo 4 hộp Thảo Mộc Mogan',
+    categorySlug: 'thao-moc-mogan',
+    price: 1480000,
+    image: '/images/products/thao-moc-mogan.webp',
+    gallery: ['/images/products/thao-moc-mogan.webp', '/images/products/thao-moc-mogan-2.webp'],
+    shortDescription:
+      '<p>Combo <strong>4 hộp</strong> trà thảo mộc túi lọc Thảo Mộc Mogan (mỗi hộp 30 gói × 5g).</p><p>Tương đương <strong>370.000 ₫/hộp</strong>.</p>',
+    description: `<h2>Thành phần</h2>
+<p>Cà gai leo, diệp hạ châu, xạ đen, mướp đắng, lá đơn.</p>
+<h2>Quy cách</h2>
+<p>Combo 4 hộp, mỗi hộp 30 gói × 5g (túi lọc).</p>
+<h2>Hướng dẫn sử dụng</h2>
+<p>Cho 3 túi lọc vào bình giữ nhiệt, ấm hoặc cốc, đổ 0,5 – 1 lít nước sôi vào. Đợi 5 – 10 phút là có thể dùng.</p>
+<p>Nên dùng sau ăn khoảng 30 phút và không dùng khi bụng quá đói.</p>
+<h2>Hướng dẫn bảo quản</h2>
+<p>Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</p>
+<h2>Cảnh báo</h2>
+<p>Không sử dụng sản phẩm quá hạn hoặc bao bì không còn nguyên vẹn.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
+    highlights: [
+      'Combo 4 hộp, mỗi hộp 30 gói × 5g, dạng túi lọc tiện dùng',
+      'Tương đương 370.000 ₫/hộp',
+      'Thành phần: cà gai leo, diệp hạ châu, xạ đen, mướp đắng, lá đơn',
+    ],
     inStock: true,
     featured: false,
     createdAt: '2026-11-18',
