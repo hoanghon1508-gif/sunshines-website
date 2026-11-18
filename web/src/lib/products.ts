@@ -180,25 +180,7 @@ export const products: Product[] = [
    * Ladi Ceek (cũ 90.000, gốc 1.200.000), Marine Omega (390.000/1.200.000),
    * Gland 3 tháng (90.000/2.253.000), Gland 1,5 tháng (390.000/2.253.000).
    */
-  {
-    id: 6,
-    slug: 'da-day-minh-nguyet',
-    name: 'Dạ Dày Minh Nguyệt',
-    categorySlug: 'thuc-pham-bao-ve-suc-khoe',
-    price: 650000,
-    salePrice: 390000,
-    gallery: [],
-    shortDescription: '<p>Sản phẩm từ thảo dược dạng bột, thương hiệu <strong>Minh Nguyệt</strong>.</p>',
-    description: `<h2>Thành phần</h2>
-<p>Bột chè dây, bột khổ sâm cho lá, bột bồ công anh, bột dạ cẩm, bột hoàn ngọc, bột cây đuôi chuột, bột phèn đen, bột cam thảo, cao đặc lá khôi, bột rau mương.</p>
-<h2>Lưu ý</h2>
-<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Liên hệ hotline để được tư vấn cách dùng phù hợp. Người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng.</p>
-<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
-    highlights: ['Thành phần từ thảo dược (chè dây, khổ sâm, bồ công anh, lá khôi…)'],
-    inStock: true,
-    featured: false,
-    createdAt: '2026-11-18',
-  },
+  // (Dạ Dày Minh Nguyệt đã bỏ khỏi web theo yêu cầu khách ngày 18/11.)
   {
     id: 7,
     slug: 'vien-uong-ladi-gree',
