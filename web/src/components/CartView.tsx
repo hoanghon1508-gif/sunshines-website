@@ -25,7 +25,7 @@ export function CartView() {
         {lines.map(({ product, qty }) => (
           <div className="cart-line" key={product.slug}>
             <Link className="cart-line__img" href={`/san-pham-chi-tiet/${product.slug}`}>
-              <Image src={product.image} alt={product.name} fill sizes="88px" />
+              {product.image && <Image src={product.image} alt={product.name} fill sizes="88px" />}
             </Link>
             <div>
               <Link className="cart-line__name" href={`/san-pham-chi-tiet/${product.slug}`}>{product.name}</Link>

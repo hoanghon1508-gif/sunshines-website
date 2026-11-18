@@ -6,6 +6,19 @@ import { useState } from 'react';
 /** Ảnh chính + dải ảnh nhỏ (slide ảnh sản phẩm). */
 export function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
   const [i, setI] = useState(0);
+  if (images.length === 0) {
+    return (
+      <figure className="product-detail__images">
+        <div className="product-detail__main">
+          <span className="img-placeholder" role="img" aria-label={`Ảnh ${alt} sẽ được cập nhật`}>
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-5-5L5 21" />
+            </svg>
+          </span>
+        </div>
+      </figure>
+    );
+  }
   return (
     <figure className="product-detail__images">
       <div className="product-detail__main">

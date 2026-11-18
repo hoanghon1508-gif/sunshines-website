@@ -125,7 +125,11 @@ function Spotlight({ product }: { product: (typeof products)[number] }) {
     <section className="section section--white spotlight" aria-labelledby="spotlight-title">
       <div className="container spotlight__grid">
         <Link className="spotlight__media" href={href} tabIndex={-1} aria-hidden="true">
-          <Image src={product.image} alt="" width={560} height={560} sizes="(max-width: 960px) 100vw, 560px" />
+          {product.image ? (
+            <Image src={product.image} alt="" width={560} height={560} sizes="(max-width: 960px) 100vw, 560px" />
+          ) : (
+            <span className="img-placeholder"><Icon name="image" size={48} /></span>
+          )}
           {pct > 0 && <span className="badge badge--sale spotlight__badge">-{pct}%</span>}
         </Link>
         <div className="spotlight__info">

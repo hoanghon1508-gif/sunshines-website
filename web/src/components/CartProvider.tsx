@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { currentPrice, getProduct, type Product } from '@/lib/products';
+import { currentPrice, getProduct, isBuyable, type Product } from '@/lib/products';
 
 export interface CartLine {
   product: Product;
@@ -61,7 +61,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const add = useCallback(
     (slug: string, qty = 1) => {
-      if (!getProduct(slug)) return;
+      const p = getProduct(slug);
+      if (!p || !isBuyable(p)) return;
       const cur = read();
       cur[slug] = Math.min(MAX_QTY, (cur[slug] ?? 0) + Math.max(1, Math.floor(qty)));
       commit(cur);
@@ -94,7 +95,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const lines: CartLine[] = [];
     for (const [slug, qty] of Object.entries(items)) {
       const product = getProduct(slug);
-      if (product && qty > 0) lines.push({ product, qty });
+      if (product && isBuyable(product) && qty > 0) lines.push({ product, qty });
     }
     return {
       lines,

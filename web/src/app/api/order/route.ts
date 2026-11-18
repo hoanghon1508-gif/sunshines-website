@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { clean, isValidEmail, isValidPhone, normalizePhone } from '@/lib/validation';
 import { clientIp, deliver, rateLimited } from '@/lib/server-utils';
-import { currentPrice, getProduct } from '@/lib/products';
+import { currentPrice, getProduct, isBuyable } from '@/lib/products';
 
 const PAYMENTS: Record<string, string> = {
   cod: 'Thanh toán khi nhận hàng (COD)',
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
   // Tính lại giá ở máy chủ, không tin giá từ trình duyệt.
   const items = (Array.isArray(body.items) ? body.items : [])
     .map((i: any) => ({ product: getProduct(String(i?.slug)), qty: Math.min(99, Math.floor(Number(i?.qty)) || 0) }))
-    .filter((i: any) => i.product && i.product.inStock && i.qty > 0)
+    .filter((i: any) => i.product && isBuyable(i.product) && i.qty > 0)
     .map((i: any) => ({
       slug: i.product.slug as string,
       name: i.product.name as string,

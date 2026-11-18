@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Icon } from './Icon';
 import { site, telHref } from '@/lib/site';
-import { discountPercent, formatPrice, currentPrice, type Product } from '@/lib/products';
+import { discountPercent, formatPrice, currentPrice, hasPrice, isBuyable, type Product } from '@/lib/products';
 import { formatDate, type Post } from '@/lib/content';
 import { AddToCartButton } from './AddToCart';
 
@@ -69,6 +69,7 @@ export function PageHero({ title, subtitle, crumbs }: { title: string; subtitle?
 }
 
 export function Price({ product }: { product: Product }) {
+  if (!hasPrice(product)) return <span className="woocommerce-Price-amount amount">Liên hệ</span>;
   const sale = discountPercent(product) > 0;
   return (
     <>
@@ -84,7 +85,11 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <li className="product-card">
       <Link className="product-card__media" href={href} tabIndex={-1} aria-hidden="true">
-        <Image src={product.image} alt="" fill sizes="(max-width: 600px) 50vw, 300px" style={{ objectFit: 'cover' }} />
+        {product.image ? (
+          <Image src={product.image} alt="" fill sizes="(max-width: 600px) 50vw, 300px" style={{ objectFit: 'cover' }} />
+        ) : (
+          <span className="img-placeholder"><Icon name="image" size={40} /></span>
+        )}
         {!product.inStock && <span className="badge badge--muted product-card__stock">Hết hàng</span>}
       </Link>
       <div className="product-card__body">
@@ -96,7 +101,11 @@ export function ProductCard({ product }: { product: Product }) {
           {pct > 0 && <span className="badge badge--sale">-{pct}%</span>}
         </div>
         <div className="product-card__action">
-          <AddToCartButton slug={product.slug} inStock={product.inStock} />
+          {isBuyable(product) || !product.inStock ? (
+            <AddToCartButton slug={product.slug} inStock={product.inStock} />
+          ) : (
+            <Link className="button" href={`/san-pham-chi-tiet/${product.slug}#tu-van`}>Liên hệ tư vấn</Link>
+          )}
         </div>
       </div>
     </li>

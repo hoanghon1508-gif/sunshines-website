@@ -4,7 +4,8 @@ import { ProductBuyBox } from '@/components/AddToCart';
 import { LeadForm } from '@/components/LeadForm';
 import { ProductGallery } from '@/components/ProductGallery';
 import { Breadcrumbs, Disclaimer, Price, ProductCard } from '@/components/ui';
-import { categoryName, currentPrice, discountPercent, getProduct, products } from '@/lib/products';
+import { categoryName, currentPrice, discountPercent, getProduct, hasPrice, isBuyable, products } from '@/lib/products';
+import { telHref } from '@/lib/site';
 import { site } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: p.name,
     description: desc,
     alternates: { canonical: `/san-pham-chi-tiet/${p.slug}` },
-    openGraph: { title: p.name, description: desc, images: [{ url: p.image }], type: 'website' },
+    openGraph: { title: p.name, description: desc, ...(p.image ? { images: [{ url: p.image }] } : {}), type: 'website' },
   };
 }
 
@@ -33,16 +34,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: p.name,
-    image: p.gallery.map((g) => site.url + g),
+    ...(p.gallery.length ? { image: p.gallery.map((g) => site.url + g) } : {}),
+    ...(p.sku ? { sku: p.sku } : {}),
     description: p.shortDescription.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
     brand: { '@type': 'Brand', name: site.name },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'VND',
-      price: currentPrice(p),
-      availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-      url: `${site.url}/san-pham-chi-tiet/${p.slug}`,
-    },
+    // Chỉ khai báo giá khi đã có giá (không khai báo giá 0).
+    ...(hasPrice(p)
+      ? {
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'VND',
+            price: currentPrice(p),
+            availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+            url: `${site.url}/san-pham-chi-tiet/${p.slug}`,
+          },
+        }
+      : {}),
   };
 
   return (
@@ -64,9 +71,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {pct > 0 && <span className="badge badge--sale single-discount">Giảm {pct}%</span>}
             </p>
             <div className="short-description" dangerouslySetInnerHTML={{ __html: p.shortDescription }} />
-            <Disclaimer />
-            <ProductBuyBox slug={p.slug} inStock={p.inStock} />
+            {p.showDisclaimer !== false && <Disclaimer />}
+            {isBuyable(p) || !p.inStock ? (
+              <ProductBuyBox slug={p.slug} inStock={p.inStock} />
+            ) : (
+              <div className="buybox">
+                <p className="woocommerce-info" style={{ margin: '16px 0' }}>
+                  Sản phẩm đang cập nhật giá. Vui lòng liên hệ để được báo giá và tư vấn.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 12 }}>
+                  <a className="btn btn--primary btn--lg" href={telHref(site.hotline)}>Gọi {site.hotline}</a>
+                  <a className="btn btn--outline btn--lg" href="#tu-van">Đăng ký tư vấn</a>
+                </div>
+              </div>
+            )}
             <div className="product-meta">
+              {p.sku && <span>Mã sản phẩm: {p.sku}</span>}
               <span>Danh mục: {categoryName(p.categorySlug)}</span>
             </div>
             <div className="consult-box" id="tu-van">
