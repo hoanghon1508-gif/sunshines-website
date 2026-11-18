@@ -35,10 +35,10 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { slug: 'thao-moc-mogan', name: 'Thảo Mộc Mogan' },
-  { slug: 'thuc-pham-bao-ve-suc-khoe', name: 'Thực phẩm bảo vệ sức khỏe' },
-  { slug: 'cham-soc-ca-nhan', name: 'Chăm sóc cá nhân' },
-  { slug: 'ca-phe', name: 'Cà phê' },
+  { slug: 'thao-moc-mogan', name: 'Thảo Mộc Mogan', image: '/images/categories/thao-moc-mogan.webp' },
+  { slug: 'thuc-pham-bao-ve-suc-khoe', name: 'Thực phẩm bảo vệ sức khỏe', image: '/images/categories/thuc-pham-bao-ve-suc-khoe.webp' },
+  { slug: 'cham-soc-ca-nhan', name: 'Chăm sóc cá nhân', image: '/images/categories/cham-soc-ca-nhan.webp' },
+  { slug: 'ca-phe', name: 'Cà phê', image: '/images/categories/ca-phe.webp' },
 ];
 
 export const products: Product[] = [
