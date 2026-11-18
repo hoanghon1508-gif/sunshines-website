@@ -204,8 +204,7 @@ export const products: Product[] = [
     slug: 'vien-uong-ladi-gree',
     name: 'Viên uống Ladi Gree',
     categorySlug: 'thuc-pham-bao-ve-suc-khoe',
-    price: 100000,
-    salePrice: 90000,
+    price: 650000, // Khách chốt 18/11 (bản WordPress cũ ghi 100.000, giảm còn 90.000).
     gallery: [],
     shortDescription: '<p>Viên uống từ thảo dược, thương hiệu <strong>Ladi</strong>.</p>',
     description: `<h2>Thành phần</h2>
