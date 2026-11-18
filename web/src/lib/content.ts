@@ -21,6 +21,38 @@ export interface Post {
  * ghi tiêu đề, ngày đăng (YYYY-MM-DD) và 1–2 câu tóm tắt; ảnh đặt trong `public/images/news/` rồi điền `image`.
  */
 export const posts: Post[] = [
+  /*
+   * 3 bài dưới đây (18/11) mới có LINK, chưa có tiêu đề/ngày/tóm tắt thật vì Facebook không cho đọc khi chưa đăng nhập.
+   * date: '' = chưa rõ ngày (thẻ sẽ không hiện ngày). Cần thay tiêu đề, ngày, tóm tắt khi khách gửi.
+   * Lưu ý: 2 bài đầu thuộc trang cá nhân/khác (cothamsongkhoe), cần kiểm tra không có câu nói công dụng chữa bệnh.
+   */
+  {
+    slug: 'bai-fanpage-1',
+    title: 'Bài viết trên Facebook',
+    excerpt: 'Nhấn để xem bài viết trên Facebook.',
+    content: '',
+    date: '',
+    category: 'Fanpage',
+    externalUrl: 'https://www.facebook.com/reel/1145278314658720',
+  },
+  {
+    slug: 'bai-fanpage-2',
+    title: 'Bài viết trên Facebook',
+    excerpt: 'Nhấn để xem bài viết trên Facebook.',
+    content: '',
+    date: '',
+    category: 'Fanpage',
+    externalUrl: 'https://www.facebook.com/cothamsongkhoe/posts/pfbid02hj6y4oivLmsCaxXy6s7UBJa4FVFcUD1vvCJ2QNScAK2CJdUhsk8j1mqkL5QuPwjHl',
+  },
+  {
+    slug: 'bai-fanpage-3',
+    title: 'Bài viết trên Facebook',
+    excerpt: 'Nhấn để xem bài viết trên Facebook.',
+    content: '',
+    date: '',
+    category: 'Fanpage',
+    externalUrl: 'https://www.facebook.com/cothamsongkhoe/posts/pfbid0pBocwP7q1QY6eo6hbravuvKLnKLc4ksPysSWgRzPzmqB5fHZZRy7544RSVEq77rvl',
+  },
   {
     slug: 'teambuilding-2026',
     title: 'Sun Shines – Teambuilding 2026',
@@ -46,6 +78,7 @@ export function sortedPosts() {
 }
 
 export function formatDate(iso: string) {
+  if (!iso) return '';
   const [y, m, d] = iso.split('-');
   return `${d}/${m}/${y}`;
 }

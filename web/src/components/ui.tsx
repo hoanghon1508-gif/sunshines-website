@@ -132,9 +132,9 @@ export function PostCard({ post, heading = 'h2' }: { post: Post; heading?: 'h2' 
     <article className="post-card">
       <Anchor className="post-card__media" tabIndex={-1} aria-hidden="true">{media}</Anchor>
       <div className="post-card__body">
-        <time className="post-card__date" dateTime={post.date}>
+        <time className="post-card__date" dateTime={post.date || undefined}>
           {formatDate(post.date)}
-          {ext && ' · Fanpage Facebook'}
+          {ext && (post.date ? ' · Facebook' : 'Facebook')}
         </time>
         <H className="post-card__title"><Anchor>{post.title}</Anchor></H>
         <p className="post-card__excerpt">{post.excerpt}</p>
