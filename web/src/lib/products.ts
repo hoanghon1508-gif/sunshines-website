@@ -106,9 +106,11 @@ export const products: Product[] = [
     id: 3,
     sku: '111',
     slug: 'nano-intestines-beauty-queen',
-    name: 'Nano Intestines Beauty Queen',
+    name: 'Nichiei Bussan Chou Beauty Queen (Nano Intestines Beauty Queen) 30 gói',
     categorySlug: 'thuc-pham-bao-ve-suc-khoe',
-    price: 0,
+    // Giá lấy từ bản WordPress cũ: giá niêm yết 1.500.000, đang bán 1.290.000.
+    price: 1500000,
+    salePrice: 1290000,
     image: '/images/products/nano-intestines-beauty-queen.webp',
     gallery: ['/images/products/nano-intestines-beauty-queen.webp'],
     shortDescription:
@@ -158,7 +160,7 @@ export const products: Product[] = [
     slug: 'ca-phe-bot',
     name: 'Cà phê bột G Land',
     categorySlug: 'ca-phe',
-    price: 0,
+    price: 100000, // Giá lấy từ bản WordPress cũ ("Cà phê hữu cơ Gland dạng bột túi 500g").
     image: '/images/products/ca-phe-bot.webp',
     gallery: ['/images/products/ca-phe-bot.webp', '/images/products/ca-phe-bot-2.webp'],
     shortDescription:
@@ -170,6 +172,141 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     createdAt: '2026-11-17',
+  },
+  /*
+   * 7 sản phẩm chuyển từ bản WordPress cũ (18/11): chỉ lấy tên, thành phần, quy cách và giá.
+   * KHÔNG chép phần "công dụng" (nhiều câu về điều trị bệnh, trái quy định). Chưa có ảnh.
+   * Giá giảm quá sâu (>60%) nghi nhập thử nên để 0 = "Liên hệ" cho tới khi khách xác nhận:
+   * Ladi Ceek (cũ 90.000, gốc 1.200.000), Marine Omega (390.000/1.200.000),
+   * Gland 3 tháng (90.000/2.253.000), Gland 1,5 tháng (390.000/2.253.000).
+   */
+  {
+    id: 6,
+    slug: 'da-day-minh-nguyet',
+    name: 'Dạ Dày Minh Nguyệt',
+    categorySlug: 'thuc-pham-bao-ve-suc-khoe',
+    price: 650000,
+    salePrice: 390000,
+    gallery: [],
+    shortDescription: '<p>Sản phẩm từ thảo dược dạng bột, thương hiệu <strong>Minh Nguyệt</strong>.</p>',
+    description: `<h2>Thành phần</h2>
+<p>Bột chè dây, bột khổ sâm cho lá, bột bồ công anh, bột dạ cẩm, bột hoàn ngọc, bột cây đuôi chuột, bột phèn đen, bột cam thảo, cao đặc lá khôi, bột rau mương.</p>
+<h2>Lưu ý</h2>
+<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Liên hệ hotline để được tư vấn cách dùng phù hợp. Người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
+    highlights: ['Thành phần từ thảo dược (chè dây, khổ sâm, bồ công anh, lá khôi…)'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 7,
+    slug: 'vien-uong-ladi-gree',
+    name: 'Viên uống Ladi Gree',
+    categorySlug: 'thuc-pham-bao-ve-suc-khoe',
+    price: 100000,
+    salePrice: 90000,
+    gallery: [],
+    shortDescription: '<p>Viên uống từ thảo dược, thương hiệu <strong>Ladi</strong>.</p>',
+    description: `<h2>Thành phần</h2>
+<p>Sinh địa, huyền sâm, hương phụ, uất kim, ích mẫu, đỗ đen sao, thanh bì, chỉ thực, cam thảo và một số thành phần khác.</p>
+<h2>Lưu ý</h2>
+<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Phụ nữ mang thai, đang cho con bú và người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng. Liên hệ hotline để được tư vấn.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
+    highlights: ['Thành phần từ thảo dược (sinh địa, huyền sâm, ích mẫu…)'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 8,
+    slug: 'dung-dich-ve-sinh-t-ladi',
+    name: 'Dung dịch vệ sinh T-Ladi',
+    categorySlug: 'cham-soc-ca-nhan',
+    price: 100000,
+    gallery: [],
+    showDisclaimer: false,
+    shortDescription: '<p>Dung dịch vệ sinh cá nhân hằng ngày, thương hiệu <strong>Ladi</strong>. Phù hợp cho cả nam và nữ.</p>',
+    description: `<h2>Giới thiệu</h2>
+<p>Dung dịch vệ sinh T-Ladi dùng để vệ sinh cá nhân hằng ngày, dành cho cả nam và nữ.</p>
+<h2>Thành phần</h2>
+<p>Aqua, Sodium, chiết xuất quả Cranberry, Glycol distearate, Lactobacillus, Alpha Glucan, Aloe Barbadensis Leaf Extract (chiết xuất lô hội), Glycerin, Polyquaternium 39, Citric acid, Alcohol, Sodium Benzoate, Potassium Sorbate, Parfum.</p>
+<h2>Lưu ý</h2>
+<p>Chỉ dùng ngoài da. Ngừng dùng nếu da bị kích ứng. Vui lòng đọc kỹ nhãn trên bao bì. Liên hệ hotline để được tư vấn.</p>`,
+    highlights: ['Dùng cho vệ sinh cá nhân hằng ngày, cả nam và nữ'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 9,
+    slug: 'vien-dat-ladi-ceek',
+    name: 'Viên đặt Ladi Ceek',
+    categorySlug: 'cham-soc-ca-nhan',
+    price: 0, // Cũ: 90.000 (gốc 1.200.000), nghi nhập thử, chờ khách xác nhận.
+    gallery: [],
+    shortDescription: '<p>Sản phẩm chiết xuất từ thảo dược, thương hiệu <strong>Ladi</strong>.</p>',
+    description: `<h2>Thành phần</h2>
+<p>Bạch chỉ, chiết xuất nghệ tây, Galla Chinensis, ngũ vị tử, Cornus officinalis, hạt hướng dương, phong lữ, Phellodendron Phellodendri, tơ hồng, Evodia, ngải cứu.</p>
+<h2>Lưu ý</h2>
+<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Phụ nữ mang thai, đang cho con bú và người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng. Liên hệ hotline để được tư vấn.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
+    highlights: ['Chiết xuất từ thảo dược (bạch chỉ, nghệ tây, ngũ vị tử, ngải cứu…)'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 10,
+    slug: 'marine-omega-120-vien',
+    name: 'Thực phẩm bảo vệ sức khỏe Marine Omega – Hộp 120 viên',
+    categorySlug: 'thuc-pham-bao-ve-suc-khoe',
+    price: 0, // Cũ: 390.000 (gốc 1.200.000), nghi nhập thử, chờ khách xác nhận.
+    gallery: [],
+    shortDescription: '<p>Thực phẩm bảo vệ sức khỏe dạng viên nang bổ sung <strong>Omega-3</strong> và dầu nhuyễn thể Krill Oil.</p><p>Quy cách: <strong>hộp 120 viên</strong>.</p>',
+    description: `<h2>Thành phần</h2>
+<p>Dầu cá, axit béo Omega-3 (EPA, DHA) và các axit béo Omega-3 khác, gelatin, glycerin, nước, dầu nhuyễn thể Krill Oil, tinh dầu chanh tự nhiên, vitamin E, màu caramel.</p>
+<h2>Quy cách</h2>
+<p>Hộp 120 viên.</p>
+<h2>Lưu ý</h2>
+<p>Vui lòng đọc kỹ nhãn trên bao bì và hướng dẫn sử dụng. Người đang dùng thuốc điều trị nên hỏi ý kiến bác sĩ trước khi sử dụng. Liên hệ hotline để được tư vấn.</p>
+<p><strong>Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</strong></p>`,
+    highlights: ['Bổ sung Omega-3 (EPA, DHA) và dầu nhuyễn thể Krill Oil', 'Quy cách: hộp 120 viên'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 11,
+    slug: 'bo-ca-phe-gland-3-thang',
+    name: 'Bộ cà phê Gland 3 tháng',
+    categorySlug: 'ca-phe',
+    price: 0, // Cũ: 90.000 (gốc 2.253.000), nghi nhập thử, chờ khách xác nhận.
+    gallery: [],
+    shortDescription: '<p>Bộ sản phẩm cà phê <strong>Gland</strong>, liệu trình dùng 3 tháng.</p>',
+    description: `<h2>Giới thiệu</h2>
+<p>Bộ sản phẩm cà phê Gland, liệu trình 3 tháng. Theo thông tin trên trang cũ, sản phẩm sử dụng hạt cà phê hữu cơ, sản xuất theo tiêu chuẩn hữu cơ của Mỹ (USA Organic) (cần xác nhận lại).</p>
+<p>Liên hệ hotline để được tư vấn và báo giá.</p>`,
+    highlights: ['Bộ sản phẩm liệu trình 3 tháng'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
+  },
+  {
+    id: 12,
+    slug: 'bo-ca-phe-gland-1-5-thang',
+    name: 'Bộ cà phê Gland 1,5 tháng',
+    categorySlug: 'ca-phe',
+    price: 0, // Cũ: 390.000 (gốc 2.253.000), nghi nhập thử, chờ khách xác nhận.
+    gallery: [],
+    shortDescription: '<p>Bộ sản phẩm cà phê <strong>Gland</strong>, liệu trình dùng 1,5 tháng.</p>',
+    description: `<h2>Giới thiệu</h2>
+<p>Bộ sản phẩm cà phê Gland, liệu trình 1,5 tháng. Theo thông tin trên trang cũ, sản phẩm sử dụng hạt cà phê hữu cơ, sản xuất theo tiêu chuẩn hữu cơ của Mỹ (USA Organic) (cần xác nhận lại).</p>
+<p>Liên hệ hotline để được tư vấn và báo giá.</p>`,
+    highlights: ['Bộ sản phẩm liệu trình 1,5 tháng'],
+    inStock: true,
+    featured: false,
+    createdAt: '2026-11-18',
   },
 ];
 

@@ -58,3 +58,20 @@ Bản WordPress lưu vào CSDL và có trang quản trị. Bản Next.js **khôn
 - Gửi email thông báo, phân quyền, tài khoản khách, trạng thái đơn.
 - Cổng thanh toán (khách chưa yêu cầu): đơn đang là COD hoặc chuyển khoản, nhân viên gọi xác nhận.
 - Giới hạn tần suất lưu trong bộ nhớ từng máy chủ, chống spam ở mức cơ bản.
+
+## Chuyển sunshines.com.vn từ WordPress sang bản này
+
+Làm theo thứ tự, không xoá hosting WordPress cũ ở iNET (giữ làm dự phòng và để xem lại đơn cũ):
+
+1. **Vercel → Add New Project** → chọn repo `sunshines-website`, **Root Directory = `web`**.
+2. **Environment Variables** (Settings → Environment Variables):
+   - `NEXT_PUBLIC_SITE_URL` = `https://sunshines.com.vn`
+   - `ORDER_WEBHOOK_URL`, `LEAD_WEBHOOK_URL` = địa chỉ nhận đơn / khách đăng ký (Google Sheets Apps Script, Zapier, Make…). **Bắt buộc**: nếu bỏ trống, đơn chỉ nằm trong log Vercel.
+3. **Deploy**, mở link `.vercel.app` kiểm tra: trang chủ, sản phẩm, đặt thử 1 đơn (xem đơn có tới webhook).
+4. **Settings → Domains** → thêm `sunshines.com.vn` và `www.sunshines.com.vn`. Vercel hiện bản ghi DNS cần đặt, thường là:
+   - `A` `@` → `76.76.21.21`
+   - `CNAME` `www` → `cname.vercel-dns.com`
+5. Vào nơi quản lý DNS của tên miền (iNET) sửa các bản ghi trên. **Không xoá** bản ghi `MX`, `TXT` (email, xác thực). DNS có thể mất vài phút đến vài giờ.
+6. Sau khi chạy ổn: kiểm tra lại giỏ hàng, thanh toán, form liên hệ trên tên miền thật; nộp lại sitemap (`/sitemap.xml`) trong Google Search Console.
+
+Lùi lại bản WordPress: đặt lại bản ghi `A` về IP hosting iNET cũ.
