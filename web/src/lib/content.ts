@@ -20,6 +20,9 @@ export interface Post {
  * Tin tức = bài viết trên fanpage. Thêm bài: copy link bài trên Facebook vào `externalUrl`,
  * ghi tiêu đề, ngày đăng (YYYY-MM-DD) và 1–2 câu tóm tắt; ảnh đặt trong `public/images/news/` rồi điền `image`.
  */
+/** Ảnh bìa thương hiệu dùng tạm khi bài chưa có ảnh riêng. Có ảnh riêng thì đặt vào public/images/news/ và điền `image`. */
+const COVER = '/images/news/sun-shines-cover.webp';
+
 export const posts: Post[] = [
   /*
    * 3 bài dưới đây (18/11) mới có LINK, chưa có tiêu đề/ngày/tóm tắt thật vì Facebook không cho đọc khi chưa đăng nhập.
@@ -33,6 +36,7 @@ export const posts: Post[] = [
     content: '',
     date: '',
     category: 'Fanpage',
+    image: COVER,
     externalUrl: 'https://www.facebook.com/reel/1145278314658720',
   },
   {
@@ -42,6 +46,7 @@ export const posts: Post[] = [
     content: '',
     date: '',
     category: 'Fanpage',
+    image: COVER,
     externalUrl: 'https://www.facebook.com/cothamsongkhoe/posts/pfbid02hj6y4oivLmsCaxXy6s7UBJa4FVFcUD1vvCJ2QNScAK2CJdUhsk8j1mqkL5QuPwjHl',
   },
   {
@@ -51,6 +56,7 @@ export const posts: Post[] = [
     content: '',
     date: '',
     category: 'Fanpage',
+    image: COVER,
     externalUrl: 'https://www.facebook.com/cothamsongkhoe/posts/pfbid0pBocwP7q1QY6eo6hbravuvKLnKLc4ksPysSWgRzPzmqB5fHZZRy7544RSVEq77rvl',
   },
   {
@@ -60,6 +66,7 @@ export const posts: Post[] = [
     content: '',
     date: '2026-09-19',
     category: 'Hoạt động',
+    image: COVER,
     externalUrl: 'https://www.facebook.com/reel/892992433893506/',
   },
 ];
