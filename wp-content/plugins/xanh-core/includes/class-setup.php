@@ -284,7 +284,16 @@ class Xanh_Setup {
 		}
 
 		$existing = get_page_by_path( self::PRODUCT_SLUG, OBJECT, 'product' );
-		$is_new   = ! $existing;
+		if ( ! $existing ) {
+			// Web cũ có thể đã có Mogan với đường dẫn khác: dùng lại, không tạo trùng.
+			foreach ( get_posts( array( 'post_type' => 'product', 'post_status' => array( 'publish', 'draft', 'private' ), 'posts_per_page' => 20, 's' => 'Mogan' ) ) as $post ) {
+				if ( 0 === mb_stripos( wp_strip_all_tags( $post->post_title ), 'Thảo mộc Mogan' ) ) {
+					$existing = $post;
+					break;
+				}
+			}
+		}
+		$is_new = ! $existing;
 		$product  = $existing ? wc_get_product( $existing->ID ) : new WC_Product_Simple();
 		if ( ! $product ) {
 			return 0;

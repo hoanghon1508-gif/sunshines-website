@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Sun Shines Core
  * Description:       Chức năng lõi của website: quản lý banner, form khách hàng, cài đặt liên hệ & mạng xã hội, phân quyền, bảo mật và SEO kỹ thuật cơ bản.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Author:            CÔNG TY TNHH TMDV SUN SHINES
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'XANH_CORE_VERSION', '1.0.0' );
+define( 'XANH_CORE_VERSION', '1.0.1' );
 define( 'XANH_CORE_FILE', __FILE__ );
 define( 'XANH_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'XANH_CORE_URL', plugin_dir_url( __FILE__ ) );
