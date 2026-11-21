@@ -36,6 +36,7 @@ export const mainNav = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
   { label: 'Sản phẩm', href: '/san-pham' },
   { label: 'Tin tức', href: '/tin-tuc' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Liên hệ', href: '/lien-he' },
 ];
 
@@ -45,6 +46,7 @@ export const footerMenus = [
     links: [
       { label: 'Giới thiệu', href: '/gioi-thieu' },
       { label: 'Tin tức', href: '/tin-tuc' },
+      { label: 'Blog', href: '/blog' },
       { label: 'Liên hệ', href: '/lien-he' },
     ],
   },

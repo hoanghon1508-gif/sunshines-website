@@ -112,10 +112,10 @@ export function ProductCard({ product }: { product: Product }) {
   );
 }
 
-export function PostCard({ post, heading = 'h2' }: { post: Post; heading?: 'h2' | 'h3' }) {
+export function PostCard({ post, heading = 'h2', basePath = '/tin-tuc' }: { post: Post; heading?: 'h2' | 'h3'; basePath?: string }) {
   const H = heading;
   const ext = post.externalUrl;
-  const href = ext ?? `/tin-tuc/${post.slug}`;
+  const href = ext ?? `${basePath}/${post.slug}`;
   // Bài trên fanpage: mở Facebook ở tab mới.
   const Anchor = ({ className, children, ...rest }: React.ComponentProps<'a'>) =>
     ext ? (

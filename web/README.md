@@ -29,6 +29,7 @@ Kiểm tra trước khi đưa lên: `npm run lint` (kiểm tra kiểu) và `npm 
 | `src/lib/site.ts` | Cài đặt website: công ty, hotline, địa chỉ, mạng xã hội, menu, banner trang chủ |
 | `src/lib/products.ts` | Sản phẩm, danh mục, giá, lọc/sắp xếp (thay cho WooCommerce) |
 | `src/lib/content.ts` | Tin tức và các trang (giới thiệu, chính sách) |
+| `src/lib/blog.ts` | Bài viết blog (`/blog`): thêm mục vào mảng `blogPosts`, nội dung là HTML |
 | `src/app/` | Các trang: `/`, `/san-pham`, `/danh-muc/[slug]`, `/san-pham-chi-tiet/[slug]`, `/gio-hang`, `/thanh-toan`, `/tin-tuc`, `/lien-he`, `/tim-kiem`, trang đơn giản `/[slug]` |
 | `src/app/api/lead`, `api/order` | Nhận form tư vấn/liên hệ và đơn hàng |
 | `src/components/` | Header, Footer, giỏ hàng, form, bộ lọc… |
